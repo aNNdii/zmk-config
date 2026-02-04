@@ -42,7 +42,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        Default {
+        Characters {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -50,14 +50,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W                &kp E            &kp R            &kp T        &kp Z    &kp U             &kp I             &kp O                 &kp P      &kp BSPC
-&kp TAB     &kp A  &HML LEFT_CONTROL S  &HML LEFT_ALT D  &HML LEFT_GUI F  &kp G        &kp H    &HMR RIGHT_GUI J  &HMR RIGHT_ALT K  &HMR RIGHT_CONTROL L  &kp SEMI   &kp SQT
-&kp LSHFT   &kp Y  &kp X                &kp C            &kp V            &kp B        &kp N    &kp M             &kp COMMA         &kp DOT               &kp SLASH  &kp RIGHT_SHIFT
-                                        &mo 1            &kp LEFT_GUI     &kp SPACE    &kp RET  &mo 2             &mo 3
+&kp ESCAPE  &kp Q            &kp W            &kp E                &kp R  &kp T        &kp Z    &kp U  &kp I                 &kp O             &kp P                &kp BSPC
+&kp TAB     &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &kp F  &kp G        &kp H    &kp J  &HMR RIGHT_CONTROL K  &HMR RIGHT_ALT L  &HMR RIGHT_GUI SEMI  &kp SQT
+&kp LSHFT   &kp Y            &kp X            &kp C                &kp V  &kp B        &kp N    &kp M  &kp COMMA             &kp DOT           &kp SLASH            &kp RIGHT_SHIFT
+                                              &mo 4                &mo 3  &kp SPACE    &kp RET  &mo 1  &mo 2
             >;
         };
 
-        Lower {
+        Numbers {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -65,14 +65,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5       &kp N6   &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
-&trans     &trans  &trans  &trans  &trans        &trans       &trans   &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &trans  &trans  &trans  &trans        &trans       &trans   &trans  &trans  &trans  &trans  &trans
-                           &trans  &kp LEFT_GUI  &kp SPACE    &kp RET  &trans  &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6   &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC
+&trans     &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans  &trans  &kp RIGHT_SHIFT
+                           &trans  &trans  &kp SPACE    &kp RET  &trans  &trans
             >;
         };
 
-        Raise {
+        Symbols {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -87,12 +87,21 @@
             >;
         };
 
+        Navigation {
+            bindings = <
+&trans  &trans        &trans        &trans            &trans  &trans       &trans          &trans          &trans        &trans          &trans    &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &trans       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp LEFT_ARROW  &kp HOME  &kp PG_UP
+&trans  &trans        &trans        &trans            &trans  &trans       &trans          &trans          &trans        &trans          &kp END   &kp PG_DN
+                                    &trans            &trans  &kp SPACE    &kp ENTER       &trans          &trans
+            >;
+        };
+
         System {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans        &bt BT_CLR    &trans     &trans          &trans        &trans     &trans  &trans
-&trans        &trans        &trans  &trans  &trans        &trans        &kp LEFT   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans        &trans        &trans  &trans  &trans        &trans        &trans     &trans          &trans        &trans     &trans  &trans
-                                    &trans  &kp LEFT_GUI  &kp SPACE     &kp ENTER  &trans          &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans  &bt BT_CLR    &trans     &trans  &trans  &trans  &trans  &kp PRINTSCREEN
+&trans        &trans        &trans  &trans  &trans  &trans        &trans     &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans  &trans  &trans  &trans        &trans     &trans  &trans  &trans  &trans  &trans
+                                    &trans  &trans  &kp SPACE     &kp ENTER  &trans  &trans
             >;
         };
     };
