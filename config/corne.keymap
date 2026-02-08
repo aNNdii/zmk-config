@@ -18,10 +18,10 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E      &kp R               &kp T        &kp Y            &kp U      &kp I            &kp O    &kp P             &kp DELETE
-&sk LALT   &kp A  &kp S  &kp D      &kp F               &kp G        &kp H            &kp J      &kp K            &kp L    &kp SINGLE_QUOTE  &sk RIGHT_ALT
-&sk LSHFT  &kp Z  &kp X  &kp C      &kp V               &kp B        &kp N            &kp M      &kp COMMA        &kp DOT  &kp FSLH          &sl 3
-                         &sk LCTRL  &mt LEFT_GUI ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_SHIFT
+&kp ESCAPE  &kp Q  &kp W  &kp E      &kp R               &kp T              &kp Z            &kp U      &kp I          &kp O    &kp P             &kp DELETE
+&kp TAB     &kp A  &kp S  &kp D      &kp F               &kp G              &kp H            &kp J      &kp K          &kp L    &kp SINGLE_QUOTE  &sl 3
+&sk LSHFT   &kp Y  &kp X  &kp C      &kp V               &kp B              &kp N            &kp M      &kp COMMA      &kp DOT  &kp FSLH          &sk RIGHT_SHIFT
+                          &sk LCTRL  &mt LEFT_GUI ENTER  &lt 1 SEMICOLON    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_ALT
             >;
         };
 
@@ -29,26 +29,26 @@
             bindings = <
 &trans  &kp EXCLAMATION  &kp AT_SIGN   &kp POUND     &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSPC
 &trans  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6     &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9          &kp NUMBER_0           &trans
-&trans  &trans           &kp TILDE     &kp GRAVE     &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans        &trans                &kp LEFT_WIN           &trans
-                                       &trans        &trans            &trans            &kp BACKSPACE    &trans             &kp COLON
+&trans  &none            &kp TILDE     &kp GRAVE     &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA     &kp DOT               &kp SLASH              &trans
+                                       &trans        &trans            &trans            &trans           &trans             &trans
             >;
         };
 
         raise_layer {
             bindings = <
-&trans  &kp DELETE     &trans            &kp UNDERSCORE  &kp PLUS     &kp PAGE_UP      &trans            &trans          &trans        &kp BACKSLASH      &kp PIPE         &trans
-&trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL    &kp PAGE_DOWN    &kp LEFT          &kp DOWN        &kp UP_ARROW  &kp RIGHT          &kp K_MENU       &trans
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp K_COPY      &kp K_PASTE  &kp SEMICOLON    &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
-                                         &kp ESCAPE      &trans       &kp TAB          &trans            &trans          &trans
+&trans  &kp HOME       &none             &kp UNDERSCORE  &kp PLUS     &kp PAGE_UP      &none            &none              &none         &kp BACKSLASH  &kp PIPE  &trans
+&trans  &kp END        &none             &kp MINUS       &kp EQUAL    &kp PAGE_DOWN    &kp LEFT         &kp DOWN           &kp UP_ARROW  &kp RIGHT      &none     &trans
+&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp K_COPY      &kp K_PASTE  &none            &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &none         &none          &none     &trans
+                                         &kp ESCAPE      &trans       &trans           &trans           &trans             &trans
             >;
         };
 
         function_layer {
             bindings = <
-&trans  &kp F1    &kp F2   &kp F3  &kp F4  &kp F5     &kp F6         &kp F7        &kp F8         &kp F9  &kp F10     &trans
-&trans  &kp F11   &kp F12  &trans  &trans  &trans     &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &trans  &bt BT_CLR  &trans
-&trans  &kp CAPS  &trans   &trans  &trans  &trans     &trans         &trans        &bt BT_DISC 2  &trans  &trans      &kp PRINTSCREEN
-                           &trans  &trans  &kp TAB    &kp BACKSPACE  &trans        &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
+&none         &none         &none  &none   &none   &none     &none   &none   &none   &none  &none  &kp PRINTSCREEN
+&bt BT_CLR    &none         &none  &none   &none   &none     &none   &none   &none   &none  &none  &none
+                                   &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
