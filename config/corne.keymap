@@ -32,6 +32,8 @@
 &sk LSHFT   &kp Y  &kp X  &kp C      &kp V         &kp B          &kp N        &kp M                  &kp COMMA      &kp DOT  &kp FSLH  &TDRightShift
                           &sk LCTRL  &sk LEFT_GUI  &lt 1 SPACE    &lt 2 ENTER  &sk RA(RC(RIGHT_GUI))  &sk RIGHT_ALT
             >;
+
+            label = "default";
         };
 
         lower {
@@ -41,6 +43,8 @@
 &trans  &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0    &kp MINUS  &kp EQUAL      &kp COMMA         &kp DOT               &kp SLASH              &kp BACKSLASH
                                           &trans           &trans           &trans             &trans     &trans         &trans
             >;
+
+            label = "lower";
         };
 
         nav {
@@ -50,6 +54,8 @@
 &none   &none  &none  &none   &none     &none            &none     &none     &none         &none      &none  &none
                       &trans  &trans    &trans           &trans    &trans    &trans
             >;
+
+            label = "nav";
         };
 
         sys {
@@ -59,6 +65,8 @@
 &bt BT_CLR  &none         &none         &none   &none   &none     &none       &none              &none            &none  &none  &none
                                         &trans  &trans  &trans    &trans      &trans             &trans
             >;
+
+            label = "sys";
         };
     };
 };
