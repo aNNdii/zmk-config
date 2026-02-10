@@ -1,6 +1,7 @@
-# 🎹 Corne 3x6 - TypeScript-Optimiertes Layout
+# 🎹 Corne 3x6 - React/TypeScript Layout
 
-> **Basierend auf Codebase-Analyse:** 767 TypeScript-Dateien analysiert für optimale Sonderzeichen-Platzierung
+> **Optimiert für React/TypeScript mit Aerospace Window Manager**
+> Basierend auf Codebase-Analyse: 767 TypeScript-Dateien
 
 ## 📊 Warum dieses Layout?
 
@@ -8,16 +9,16 @@ Durch Analyse Ihrer Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 | Zeichen | Häufigkeit | Platzierung |
 |---------|-----------|-------------|
-| `.` | 13.5% | Home Row (Symbol Layer) |
-| `()` | 22.2% | Combo (S+D) |
-| `'` | 9.7% | Base Layer |
-| `;` | 8.6% | Home Row (Symbol Layer) |
-| `/` | 7.7% | Symbol Layer prominent |
-| `,` | 7.6% | Home Row (Symbol Layer) |
-| `{}` | 13.4% | Combo (J+K) |
-| `:` | 6.6% | Home Row (Symbol Layer) |
+| `.` | 13.5% | Symbol Layer (G Position) |
+| `()` | 5,050× | Combo (D+F) + Symbol Layer (E/R) |
+| `<>` | JSX/React | Symbol Layer (Z/X) - leicht erreichbar! |
+| `;` | 8.6% | Symbol Layer (rechte Home Row) |
+| `/` | 7.7% | Symbol Layer |
+| `,` | 7.6% | Symbol Layer |
+| `{}` | 3,094× | Combo (J+K) + Symbol Layer (C/V) |
+| `:` | 6.6% | Symbol Layer (T Position) |
 
-**Resultat:** ~15-20% weniger Tastendrücke für TypeScript-Code!
+**Resultat:** ~15-20% weniger Tastendrücke für React/TypeScript!
 
 ---
 
@@ -43,10 +44,17 @@ git push
 
 ### **5 Layer-System:**
 1. **BASE** - QWERTY mit CAG Home Row Mods
-2. **SYMBOL** - TypeScript-optimiert nach Häufigkeit
-3. **NUMBERS** - Zahlenreihe + Numpad rechts
-4. **NAV** - Vim-Style + Traditional Arrows
-5. **SYSTEM** - Bluetooth, Media, Controls
+2. **SYMBOL** - React/TypeScript-optimiert (Enter hold)
+3. **NUMBERS** - Zahlenreihe + Numpad (Space hold)
+4. **NAV** - Vim-Style Navigation (F hold ODER L-Shift 2x)
+5. **SYSTEM** - Bluetooth, Volume, Brightness (R-Shift 2x)
+
+### **Layer-Zugriff:**
+- **ENTER hold** → Symbol Layer (momentary)
+- **SPACE hold** → Number Layer (momentary)
+- **F hold** → Nav Layer (momentary)
+- **L-Shift 2x tap** → Nav Layer (toggle - ESC zum Beenden)
+- **R-Shift 2x tap** → System Layer (toggle - ESC zum Beenden)
 
 ---
 
@@ -54,27 +62,37 @@ git push
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│ TAB │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │ BSP │
+│ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │ BSP │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ESC │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │  '  │
-│     │Ctl/A│Alt/S│Cmd/D│     │     │   │     │     │Alt/K│Cmd/L│Ctl/;│     │
+│ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │  '  │
+│     │Ctl/A│Alt/S│Cmd/D│Nav/F│     │   │     │     │Alt/K│Cmd/L│Ctl/;│     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ SFT │  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │ SFT │
+│SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │SHIFT│
+│ 2x→ │     │     │     │     │     │   │     │     │     │     │     │ 2x→ │
+│ NAV │     │     │     │     │     │   │     │     │     │     │     │ SYS │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │ CMD │SYM/ │NAV/ │   │NUM/ │SYM/ │ CMD │
-                  │     │ SPC │ TAB │   │ BSP │ RET │     │
+                  │ ALT │ CMD │ SPC │   │ ENT │ CMD │ CTL │
+                  │     │     │^NUM │   │^SYM │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
 ### **CAG Home Row Mods (Hold):**
-- **A** = Ctrl | **S** = Alt | **D** = Cmd ⭐
+- **A** = Ctrl | **S** = Alt | **D** = Cmd ⭐ | **F** = Nav Layer
 - **K** = Alt | **L** = Cmd ⭐ | **;** = Ctrl
-- **F & J** bleiben normal (keine Modifier)
+- **J** bleibt normal (kein Modifier)
+
+### **Daumentasten:**
+- **Links:** Alt | Cmd | Space (hold = Numbers)
+- **Rechts:** Enter (hold = Symbols) | Cmd | Ctrl
 
 **Warum CAG?**
 - ✅ Cmd auf Mittelfinger (D/L) - häufigster macOS-Modifier optimal platziert!
+- ✅ Alt auf Home Row für Aerospace Window Manager (Alt+H/J/K/L)
 - ✅ Cmd+C/V/Z: D+C/V/Z (perfekt erreichbar!)
-- ✅ Index-Finger frei - weniger Fehler beim schnellen Tippen
+
+### **Shift Double-Tap:**
+- **L-Shift 2x** = Nav Layer Toggle (ESC zum Beenden)
+- **R-Shift 2x** = System Layer Toggle (ESC zum Beenden)
 
 ---
 
@@ -106,27 +124,30 @@ const foo = () => {
 
 ---
 
-## 🎨 Layer 1: SYMBOL (TypeScript-optimiert)
+## 🎨 Layer 1: SYMBOL (React/TypeScript-optimiert)
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│  ~  │  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  *  │  (  │  )  │ DEL │
+│  ~  │  !  │  @  │  (  │  )  │  :  │   │  ^  │  #  │  $  │  %  │  &  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  `  │  -  │  =  │  [  │  ]  │  \  │   │  /  │  :  │  ;  │  .  │  ,  │  "  │
+│  `  │  [  │  ]  │  {  │  }  │  .  │   │  /  │  -  │  =  │  ;  │  "  │  *  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │  _  │  +  │  {  │  }  │  |  │   │  ?  │  <  │  >  │  ,  │  .  │     │
+│     │  <  │  >  │  |  │  \  │  ,  │   │  ?  │  _  │  +  │  !  │  \  │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │     │ ███ │     │   │     │ ███ │     │
+                  │     │     │     │   │ ███ │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
-**Design-Philosophie:**
-- **Rechte Home Row:** `/` `:` `;` `.` `,` - häufigste Zeichen!
-- **Linke Home Row:** `-` `=` `[` `]` - nah für `=>` Arrow Functions
-- **Paarweise:** `()` `[]` `{}` `<>` logisch gruppiert
-- **TypeScript-spezifisch:** `:` für Type Annotations (6.6% aller Sonderzeichen!)
+**Design-Philosophie (ENTER hold mit rechter Hand):**
+- **Linke Hand tippt (frei)** - häufigste Symbole!
+- **`!` `@` auf Q/W** - Zeige-/Mittelfinger (stark!)
+- **`()` auf E/R** - 5,050× Vorkommen im Codebase
+- **`[]` `{}` auf Home Row** - S/D + C/V (leicht erreichbar!)
+- **`<>` auf Z/X** - JSX/React/Generics (nebeneinander!)
+- **`.` auf G** - 13.5% häufigstes Symbol
+- **`:` auf T** - 6.6% für TypeScript Type Annotations
 
-**Zugriff:** Space oder Enter halten
+**Zugriff:** Enter halten (rechte Hand)
 
 ---
 
@@ -134,13 +155,13 @@ const foo = () => {
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│ SYS │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │ SYS │
+│     │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │ BSP │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ CMD │ ALT │ CTL │ SFT │     │   │  +  │  4  │  5  │  6  │  -  │  *  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │     │     │     │     │     │   │  =  │  1  │  2  │  3  │  /  │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │     │     │     │   │ ███ │  0  │  .  │
+                  │     │     │ ███ │   │     │  0  │  .  │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
@@ -148,9 +169,10 @@ const foo = () => {
 - Top Row: Zahlenreihe 1-0 (klassisch)
 - **Numpad rechts:** 789, 456, 123, 0 (Taschenrechner-Layout)
 - Rechenoperatoren: `+` `-` `*` `/` `=`
-- **System-Layer-Zugriff:** TAB oder P halten → Layer 4
+- Backspace durchgereicht (transparent)
+- Modifier auf linker Home Row für Shortcuts
 
-**Zugriff:** Backspace halten
+**Zugriff:** Space halten (linke Hand)
 
 ---
 
@@ -158,13 +180,14 @@ const foo = () => {
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │     │     │
+│ ESC │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │     │     │
+│EXIT │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ CTL │ ALT │ CMD │     │     │   │  ←  │  ↓  │  ↑  │  →  │  ↑  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │     │   │     │     │     │  ←  │  ↓  │  →  │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │     │     │ ███ │   │     │     │     │
+                  │     │     │     │   │     │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
@@ -173,8 +196,11 @@ const foo = () => {
 - **Traditional (Unten rechts):** M=←, ,=↓, .=↑, /=→
 - **macOS-Shortcuts:** Undo, Cut, Copy, Paste (linke Hand)
 - **Page-Navigation:** Home, End, PgUp, PgDn
+- **ESC = Exit** (bei Toggle-Modus zurück zu BASE)
 
-**Zugriff:** Tab halten
+**Zugriff:** 
+- **F hold** (momentary - automatisch aus beim Loslassen)
+- **L-Shift double-tap** (toggle - ESC zum Beenden)
 
 ---
 
@@ -182,9 +208,10 @@ const foo = () => {
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │     │     │     │     │     │   │     │  ⏮  │ ⏯  │  ⏭  │     │PSCRN│
+│ ESC │     │     │     │     │     │   │     │     │     │     │     │PSCRN│
+│EXIT │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ BT0 │ BT1 │ BT2 │ BT3 │ BT4 │   │     │  🔇 │ 🔉  │ 🔊  │     │     │
+│     │ BT0 │ BT1 │     │     │     │   │     │     │ 🔉  │ 🔊  │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │BTCLR│     │     │     │     │     │   │     │     │ 🔅  │ 🔆  │     │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
@@ -193,19 +220,18 @@ const foo = () => {
 ```
 
 **Features:**
-- **Bluetooth:** Profile 0-4 + Clear
-- **Media:** Play/Pause, Prev, Next
-- **Volume:** Mute, Vol-, Vol+
-- **Brightness:** Bri-, Bri+
-- **Screenshot:** PrintScreen
+- **Bluetooth:** Profile 0-1 (A/S) + Clear (L-Shift)
+- **Volume:** Vol-, Vol+ (K/L)
+- **Brightness:** Bri-, Bri+ (,/.)
+- **Screenshot:** PrintScreen (P)
+- **ESC = Exit** (zurück zu BASE)
 
-**Zugriff:** Im Numbers-Layer (Backspace halten) → TAB oder P halten
+**Zugriff:** R-Shift double-tap (toggle - bleibt aktiv bis ESC oder R-Shift 2x)
 
 **Beispiele:**
-- Bluetooth wechseln: `Backspace` → `TAB` → `S` (BT 1)
-- Musik pausieren: `Backspace` → `P` → `I` (Play/Pause)
-- Screenshot: `Backspace` → `P` → `P` (PrintScr)
-- Lautstärke: `Backspace` → `P` → `L` (Vol+)
+- Bluetooth wechseln: `R-Shift 2x` → `S` (BT 1) → `ESC`
+- Screenshot: `R-Shift 2x` → `P` (PrintScr) → `ESC`
+- Lautstärke: `R-Shift 2x` → `L` (Vol+) → `ESC`
 
 ---
 
@@ -215,11 +241,12 @@ const foo = () => {
 
 **Linke Hand:**
 - **A** halten = Ctrl
-- **S** halten = Alt
+- **S** halten = Alt (Aerospace!)
 - **D** halten = Cmd ⭐ (wichtigster!)
+- **F** halten = Nav Layer
 
 **Rechte Hand:**
-- **K** halten = Alt
+- **K** halten = Alt (Aerospace!)
 - **L** halten = Cmd ⭐ (wichtigster!)
 - **;** halten = Ctrl
 
@@ -228,10 +255,10 @@ const foo = () => {
 // Cmd+C (Copy): Halte D, drücke C
 // Cmd+V (Paste): Halte D, drücke V
 // Cmd+Z (Undo): Halte D, drücke Z
-// Cmd+S (Save): Halte D, drücke S (gleiche Hand!)
+// Alt+H (Aerospace): Halte S, drücke H
 ```
 
-### Tag 4-7: Combos verinnerlichen
+### Tag 4-7: Combos & React/JSX verinnerlichen
 
 ```typescript
 // Arrow Function (D+F gleichzeitig)
@@ -242,13 +269,23 @@ const foo = () => {
   // Geschweifte Klammern (J+K gleichzeitig)
   const obj = {}
 }
+
+// JSX mit Enter-hold (Symbol Layer)
+<Component>  // ENTER hold → Z/X für <>
+  <div />
+</Component>
 ```
 
-### Tag 8-14: Symbol-Layer & Layer-Switching
+### Tag 8-14: Layer-Switching & Toggle-Modi
 
-- Space/Enter halten → Symbol-Layer
-- Backspace halten → Numbers-Layer
-- Tab halten → Navigation-Layer
+**Momentary (halten):**
+- **ENTER hold** → Symbol-Layer (React/TS Symbole)
+- **SPACE hold** → Number-Layer (Zahlen + Numpad)
+- **F hold** → Nav-Layer (Pfeile, Vim)
+
+**Toggle (bleiben aktiv):**
+- **L-Shift 2x** → Nav-Layer (lange Navigation, ESC zum Beenden)
+- **R-Shift 2x** → System-Layer (Bluetooth/Volume, ESC zum Beenden)
 
 **Tipp:** [monkeytype.com](https://monkeytype.com) für Tipp-Übungen
 
@@ -364,12 +401,15 @@ git push
 ## 📊 Layout-Features Zusammenfassung
 
 ✅ **5 Layer** - Base, Symbol, Numbers, Nav, System
-✅ **CAG Home Row Mods** - Cmd auf Mittelfinger (D/L)
+✅ **CAG Home Row Mods** - Cmd auf Mittelfinger (D/L), Alt für Aerospace
 ✅ **4 TypeScript-Combos** - =>, (), {}, []
-✅ **macOS-optimiert** - Cmd+C/V/Z perfekt erreichbar
-✅ **Doppelte Pfeiltasten** - Vim + Traditional
-✅ **System-Controls** - Bluetooth, Media, Volume, Brightness
-✅ **Dedizierte Shift-Tasten** - Keine HRM-Konflikte
+✅ **React/JSX-optimiert** - `<>` auf Z/X (Symbol Layer)
+✅ **One-Hand Symbol Layer** - Enter hold (rechts), linke Hand tippt
+✅ **macOS + Aerospace** - Alt/Cmd optimal platziert
+✅ **Toggle + Hold Modi** - Flexible Layer-Zugriffe
+✅ **ESC als Layer-Exit** - Aus Toggle-Layern zurück zu BASE
+✅ **Dedizierte Shift-Tasten** - Mit Double-Tap für Layer-Toggle
+✅ **Minimal System Layer** - Nur BT 0/1, Volume, Brightness
 ✅ **Basierend auf Analyse** - 767 TypeScript-Dateien
 
 ---
@@ -385,7 +425,18 @@ git push
 
 ## 📝 Changelog
 
-**v2.0 (Current):**
+**v3.0 (Current):**
+- ESC/TAB getauscht (ESC oben links, TAB Home Row)
+- React/JSX-optimiert: `<>` auf Z/X (Symbol Layer)
+- One-handed Symbol Layer (Enter hold, linke Hand tippt)
+- Layer-Toggle: L-Shift 2x (Nav), R-Shift 2x (System)
+- ESC als Layer-Exit für Toggle-Modi
+- Daumentasten: Alt/Cmd/Space | Enter/Cmd/Ctrl
+- Alt auf Home Row für Aerospace Window Manager
+- Minimal System Layer: Nur BT 0/1, Volume, Brightness
+- F hold für Nav Layer (zusätzlich zu Toggle)
+
+**v2.0:**
 - CAG Home Row Mods (Cmd auf D/L)
 - 4 fokussierte TypeScript-Combos
 - Doppelte Pfeiltasten im Nav Layer
@@ -397,6 +448,39 @@ git push
 
 ---
 
-**Viel Erfolg mit Ihrem TypeScript-optimierten Corne Layout!** 🎉
+**Viel Erfolg mit deinem React/TypeScript-optimierten Corne Layout!** 🎉
 
 Bei Fragen oder Anpassungswünschen: Issue erstellen oder PR öffnen.
+
+---
+
+## 🎯 Quick Reference Card
+
+```
+LAYER ACCESS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENTER hold       → Symbol Layer (momentary)
+SPACE hold       → Number Layer (momentary)
+F hold           → Nav Layer (momentary)
+L-Shift 2x tap   → Nav Layer (toggle, ESC to exit)
+R-Shift 2x tap   → System Layer (toggle, ESC to exit)
+
+COMBOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+D+F   → =>  (Arrow Function)
+S+D   → ()  (Empty Parens, cursor inside)
+J+K   → {}  (Empty Braces, cursor inside)
+K+L   → []  (Empty Brackets, cursor inside)
+
+HOME ROW MODS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A hold  → Ctrl    |  K hold  → Alt
+S hold  → Alt     |  L hold  → Cmd
+D hold  → Cmd     |  ; hold  → Ctrl
+F hold  → Nav     |
+
+THUMB KEYS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Left:  Alt | Cmd | Space (hold=Numbers)
+Right: Enter (hold=Symbols) | Cmd | Ctrl
+```
