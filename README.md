@@ -60,16 +60,17 @@ git push
 ## 🎹 Layer 0: BASE
 
 ```
-╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │ BSP │
-├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │  '  │
-│     │Ctl/A│Alt/S│Cmd/D│     │     │   │     │     │Alt/K│Cmd/L│Ctl/;│     │
-├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │SHIFT│
-│     │     │     │     │     │     │   │     │     │     │     │     │ 2x→ │
-│     │     │     │     │     │     │   │     │     │     │     │     │ SYS │
-╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
+╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬──────────╮
+│ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │BSP/DEL ⌫ │
+│     │     │     │     │     │     │   │     │     │     │     │     │  Shift=⌦ │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
+│ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │    '     │
+│     │Ctl/A│Alt/S│Cmd/D│     │     │   │     │     │Alt/K│Cmd/L│Ctl/;│          │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
+│SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │  SHIFT   │
+│     │     │     │     │     │     │   │     │     │     │     │     │   2x→    │
+│     │     │     │     │     │     │   │     │     │     │     │     │   SYS    │
+╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
                   │ ALT │ CMD │ SPC │   │ ENT │ CMD │ CTL │
                   │     │     │^NUM │   │^SYM │     │     │
                   │     │     │^NAV │   │     │     │     │
@@ -94,8 +95,9 @@ git push
 - ✅ Alt auf Home Row für Aerospace Window Manager (Alt+H/J/K/L)
 - ✅ Cmd+C/V/Z: D+C/V/Z (perfekt erreichbar!)
 
-### **Shift Double-Tap:**
-- **R-Shift 2x** = System Layer Toggle (ESC zum Beenden)
+### **Smart Keys:**
+- **Backspace:** Normal = Backspace, **Shift+Backspace** = Delete
+- **R-Shift 2x:** System Layer Toggle (ESC zum Beenden)
 
 ---
 
@@ -135,7 +137,7 @@ In `config/corne.keymap` die gewünschten Combos aus den Kommentaren entfernen:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│  ~  │  !  │  @  │  (  │  )  │  :  │   │  ^  │  #  │  $  │  %  │  &  │ DEL │
+│  ~  │  !  │  @  │  (  │  )  │  :  │   │  ^  │  #  │  $  │  %  │  &  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │  `  │  [  │  ]  │  {  │  }  │  .  │   │  /  │  -  │  =  │  ;  │  "  │  *  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -162,9 +164,9 @@ In `config/corne.keymap` die gewünschten Combos aus den Kommentaren entfernen:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │ BSP │
+│     │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ CMD │ ALT │ CTL │ SFT │     │   │  +  │  4  │  5  │  6  │  -  │  *  │
+│     │ CMD │ ALT │ CTL │     │     │   │  +  │  4  │  5  │  6  │  -  │  *  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │     │     │     │     │     │   │  =  │  1  │  2  │  3  │  /  │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
@@ -177,7 +179,7 @@ In `config/corne.keymap` die gewünschten Combos aus den Kommentaren entfernen:
 - **Numpad rechts:** 789, 456, 123, 0 (Taschenrechner-Layout)
 - Rechenoperatoren: `+` `-` `*` `/` `=`
 - Backspace durchgereicht (transparent)
-- Modifier auf linker Home Row für Shortcuts
+- Modifier auf linker Home Row für Shortcuts (Cmd, Alt, Ctrl)
 
 **Zugriff:** Space halten (linke Hand)
 
@@ -215,22 +217,20 @@ In `config/corne.keymap` die gewünschten Combos aus den Kommentaren entfernen:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│ ESC │     │     │     │     │     │   │     │     │     │     │     │PSCRN│
+│ ESC │ BT0 │ BT1 │     │     │     │   │MUTE │ 🔉  │ 🔊  │     │     │     │
 │EXIT │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ BT0 │ BT1 │     │     │     │   │     │     │ 🔉  │ 🔊  │     │     │
+│     │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│BTCLR│     │     │     │     │     │   │     │     │ 🔅  │ 🔆  │     │     │
+│BTCLR│     │     │     │     │     │   │     │     │     │     │     │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
                   │     │     │     │   │     │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
 **Features:**
-- **Bluetooth:** Profile 0-1 (A/S) + Clear (L-Shift)
-- **Volume:** Vol-, Vol+ (K/L)
-- **Brightness:** Bri-, Bri+ (,/.)
-- **Screenshot:** PrintScreen (P)
+- **Bluetooth:** Profile 0-1 (Q/W) + Clear (L-Shift)
+- **Volume:** Mute, Vol-, Vol+ (H/J/K)
 - **ESC = Exit** (zurück zu BASE)
 
 **Zugriff:** R-Shift double-tap (toggle - bleibt aktiv bis ESC oder R-Shift 2x)

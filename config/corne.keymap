@@ -145,6 +145,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp RSHFT>, <&tog 4>;
         };
+
+        // Mod-Morph: Backspace normal, Shift+Backspace = Delete
+
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -155,7 +164,7 @@
         base_layer {
             label = "BASE";
             bindings = <
-&kp ESC    &kp Q          &kp W         &kp E         &kp R     &kp T         &kp Y      &kp U     &kp I         &kp O         &kp P             &kp BSPC
+&kp ESC    &kp Q          &kp W         &kp E         &kp R     &kp T         &kp Y      &kp U     &kp I         &kp O         &kp P             &bspc_del
 &kp TAB    &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &kp F     &kp G         &kp H      &kp J     &hm_r RALT K  &hm_r RGUI L  &hm_r RCTRL SEMI  &kp SQT
 &kp LSHFT  &kp Z          &kp X         &kp C         &kp V     &kp B         &kp N      &kp M     &kp COMMA     &kp DOT       &kp FSLH          &td_rshift
                                         &kp LALT      &kp LGUI  &space_nav    &lt 1 RET  &kp LGUI  &kp RCTRL
@@ -167,7 +176,7 @@
         symbol_layer {
             label = "SYMBOL";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &kp DEL
+&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &trans
 &kp GRAVE  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL  &kp SEMI   &kp DQT   &kp STAR
 &trans     &kp LT    &kp GT    &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS   &kp EXCL   &kp BSLH  &trans
                                &trans    &trans    &trans       &trans     &trans     &trans
@@ -179,10 +188,10 @@
         number_layer {
             label = "NUMBERS";
             bindings = <
-&trans  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5    &kp N6     &kp N7  &kp N8   &kp N9  &kp N0     &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4  &kp N5   &kp N6  &kp MINUS  &kp STAR
-&trans  &none     &none     &none      &none      &none     &kp EQUAL  &kp N1  &kp N2   &kp N3  &kp FSLH   &trans
-                            &trans     &trans     &trans    &trans     &kp N0  &kp DOT
+&trans  &kp N1    &kp N2    &kp N3     &kp N4   &kp N5    &kp N6     &kp N7  &kp N8   &kp N9  &kp N0     &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &none    &none     &kp PLUS   &kp N4  &kp N5   &kp N6  &kp MINUS  &kp STAR
+&trans  &none     &none     &none      &none    &none     &kp EQUAL  &kp N1  &kp N2   &kp N3  &kp FSLH   &trans
+                            &trans     &trans   &trans    &trans     &kp N0  &kp DOT
             >;
         };
 
@@ -203,7 +212,7 @@
         system_layer {
             label = "SYS";
             bindings = <
-&to 0       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &kp PSCRN
+&to 0       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &trans
 &none       &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
 &bt BT_CLR  &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
                                         &trans  &trans  &trans    &trans      &trans        &trans
