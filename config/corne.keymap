@@ -18,7 +18,6 @@
 
         // Combos deaktiviert - zu oft versehentlich ausgelöst
         // Bei Bedarf einzelne Combos wieder aktivieren
-
         /*
         // Arrow Function => (1,878 Vorkommen)
         combo_arrow {
@@ -129,11 +128,12 @@
         };
 
         // Mod-Morph: Space normal/hold=Numbers, Shift+Space hold=Nav
-        
+
         space_nav: space_navigation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&lt_spc 2 SPACE>, <&mo 3>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -145,8 +145,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp RSHFT>, <&tog 4>;
         };
-
-
     };
 
     keymap {
@@ -157,10 +155,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-&kp ESC     &kp Q          &kp W         &kp E         &kp R            &kp T        &kp Y       &kp U          &kp I         &kp O         &kp P             &kp BSPC
-&kp TAB     &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &kp F            &kp G        &kp H       &kp J          &hm_r RALT K  &hm_r RGUI L  &hm_r RCTRL SEMI  &kp SQT
-&kp LSHFT   &kp Z          &kp X         &kp C         &kp V            &kp B        &kp N       &kp M          &kp COMMA     &kp DOT       &kp FSLH          &td_rshift
-                                        &kp LALT      &kp LGUI         &space_nav   &lt 1 RET  &kp LGUI       &kp RCTRL
+&kp ESC    &kp Q          &kp W         &kp E         &kp R     &kp T         &kp Y      &kp U     &kp I         &kp O         &kp P             &kp BSPC
+&kp TAB    &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &kp F     &kp G         &kp H      &kp J     &hm_r RALT K  &hm_r RGUI L  &hm_r RCTRL SEMI  &kp SQT
+&kp LSHFT  &kp Z          &kp X         &kp C         &kp V     &kp B         &kp N      &kp M     &kp COMMA     &kp DOT       &kp FSLH          &td_rshift
+                                        &kp LALT      &kp LGUI  &space_nav    &lt 1 RET  &kp LGUI  &kp RCTRL
             >;
         };
 
@@ -169,10 +167,10 @@
         symbol_layer {
             label = "SYMBOL";
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT     &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR  &kp PRCNT  &kp AMPS   &kp DEL
-&kp GRAVE  &kp LBKT   &kp RBKT   &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL &kp SEMI   &kp DQT    &kp STAR
-&trans     &kp LT     &kp GT     &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS  &kp EXCL   &kp BSLH   &trans
-                                 &trans    &trans    &trans       &trans     &trans     &trans
+&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &kp DEL
+&kp GRAVE  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL  &kp SEMI   &kp DQT   &kp STAR
+&trans     &kp LT    &kp GT    &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS   &kp EXCL   &kp BSLH  &trans
+                               &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
@@ -205,10 +203,10 @@
         system_layer {
             label = "SYS";
             bindings = <
-&to 0       &none         &none         &none   &none   &none     &none   &none  &none         &none         &none  &kp PSCRN
-&none       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &none   &none  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none
-&bt BT_CLR  &none         &none         &none   &none   &none     &none   &none  &kp C_BRI_DN  &kp C_BRI_UP  &none  &none
-                                 &trans  &trans  &trans    &trans  &trans        &trans
+&to 0       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &kp PSCRN
+&none       &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
+&bt BT_CLR  &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
+                                        &trans  &trans  &trans    &trans      &trans        &trans
             >;
         };
     };
