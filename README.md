@@ -46,14 +46,13 @@ git push
 1. **BASE** - QWERTY mit CAG Home Row Mods
 2. **SYMBOL** - React/TypeScript-optimiert (Enter hold)
 3. **NUMBERS** - Zahlenreihe + Numpad (Space hold)
-4. **NAV** - Vim-Style Navigation (F hold ODER L-Shift 2x)
+4. **NAV** - Vim-Style Navigation (Shift+Space hold)
 5. **SYSTEM** - Bluetooth, Volume, Brightness (R-Shift 2x)
 
 ### **Layer-Zugriff:**
 - **ENTER hold** → Symbol Layer (momentary)
 - **SPACE hold** → Number Layer (momentary)
-- **F hold** → Nav Layer (momentary)
-- **L-Shift 2x tap** → Nav Layer (toggle - ESC zum Beenden)
+- **SHIFT+SPACE hold** → Nav Layer (momentary)
 - **R-Shift 2x tap** → System Layer (toggle - ESC zum Beenden)
 
 ---
@@ -65,24 +64,29 @@ git push
 │ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │ BSP │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │  '  │
-│     │Ctl/A│Alt/S│Cmd/D│Nav/F│     │   │     │     │Alt/K│Cmd/L│Ctl/;│     │
+│     │Ctl/A│Alt/S│Cmd/D│     │     │   │     │     │Alt/K│Cmd/L│Ctl/;│     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │SHIFT│
-│ 2x→ │     │     │     │     │     │   │     │     │     │     │     │ 2x→ │
-│ NAV │     │     │     │     │     │   │     │     │     │     │     │ SYS │
+│     │     │     │     │     │     │   │     │     │     │     │     │ 2x→ │
+│     │     │     │     │     │     │   │     │     │     │     │     │ SYS │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
                   │ ALT │ CMD │ SPC │   │ ENT │ CMD │ CTL │
                   │     │     │^NUM │   │^SYM │     │     │
+                  │     │     │^NAV │   │     │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
+             (Shift+Space hold = Nav)
 ```
 
 ### **CAG Home Row Mods (Hold):**
-- **A** = Ctrl | **S** = Alt | **D** = Cmd ⭐ | **F** = Nav Layer
+- **A** = Ctrl | **S** = Alt | **D** = Cmd ⭐
 - **K** = Alt | **L** = Cmd ⭐ | **;** = Ctrl
-- **J** bleibt normal (kein Modifier)
+- **F/J** bleiben normal (keine Modifier)
 
 ### **Daumentasten:**
-- **Links:** Alt | Cmd | Space (hold = Numbers)
+- **Links:** Alt | Cmd | Space
+  - **Space tap:** Space
+  - **Space hold:** Number Layer
+  - **Shift+Space hold:** Nav Layer
 - **Rechts:** Enter (hold = Symbols) | Cmd | Ctrl
 
 **Warum CAG?**
@@ -91,12 +95,18 @@ git push
 - ✅ Cmd+C/V/Z: D+C/V/Z (perfekt erreichbar!)
 
 ### **Shift Double-Tap:**
-- **L-Shift 2x** = Nav Layer Toggle (ESC zum Beenden)
 - **R-Shift 2x** = System Layer Toggle (ESC zum Beenden)
 
 ---
 
-## ⚡ TypeScript-Combos (4 essenzielle)
+## ⚡ TypeScript-Combos
+
+**Status: Aktuell deaktiviert** ❌
+
+Alle Combos sind momentan auskommentiert, da sie zu oft versehentlich ausgelöst wurden.
+
+<details>
+<summary>Verfügbare Combos (zum Aktivieren)</summary>
 
 | Combo | Tasten | Output | Häufigkeit | Beschreibung |
 |-------|--------|--------|-----------|--------------|
@@ -107,20 +117,17 @@ git push
 
 **Timeout:** 50ms (schnell reagierend)
 
-### Beispiel-Usage:
-```typescript
-// D+F gleichzeitig → =>
-const foo = () => {
-  // S+D gleichzeitig → ()
-  console.log()
-  
-  // J+K gleichzeitig → {}
-  const obj = {}
-  
-  // K+L gleichzeitig → []
-  const arr = []
-}
+### Combos wieder aktivieren:
+
+In `config/corne.keymap` die gewünschten Combos aus den Kommentaren entfernen:
+
+```c
+// Zeilen 16-54: Entferne /* ... */ um Combos zu aktivieren
 ```
+
+**Tipp:** Starte mit nur einem Combo (z.B. Arrow Function) und teste, ob es stört.
+
+</details>
 
 ---
 
@@ -199,8 +206,8 @@ const foo = () => {
 - **ESC = Exit** (bei Toggle-Modus zurück zu BASE)
 
 **Zugriff:** 
-- **F hold** (momentary - automatisch aus beim Loslassen)
-- **L-Shift double-tap** (toggle - ESC zum Beenden)
+- **Shift+Space hold** (momentary - automatisch aus beim Loslassen)
+- Beide Shift-Tasten funktionieren (L-Shift oder R-Shift)
 
 ---
 
@@ -243,7 +250,6 @@ const foo = () => {
 - **A** halten = Ctrl
 - **S** halten = Alt (Aerospace!)
 - **D** halten = Cmd ⭐ (wichtigster!)
-- **F** halten = Nav Layer
 
 **Rechte Hand:**
 - **K** halten = Alt (Aerospace!)
@@ -256,6 +262,12 @@ const foo = () => {
 // Cmd+V (Paste): Halte D, drücke V
 // Cmd+Z (Undo): Halte D, drücke Z
 // Alt+H (Aerospace): Halte S, drücke H
+```
+
+**Navigation:**
+```
+// Space halten → Numbers
+// Shift+Space halten → Navigation (Pfeile)
 ```
 
 ### Tag 4-7: Combos & React/JSX verinnerlichen
@@ -281,10 +293,9 @@ const foo = () => {
 **Momentary (halten):**
 - **ENTER hold** → Symbol-Layer (React/TS Symbole)
 - **SPACE hold** → Number-Layer (Zahlen + Numpad)
-- **F hold** → Nav-Layer (Pfeile, Vim)
+- **SHIFT+SPACE hold** → Nav-Layer (Pfeile, Vim)
 
 **Toggle (bleiben aktiv):**
-- **L-Shift 2x** → Nav-Layer (lange Navigation, ESC zum Beenden)
 - **R-Shift 2x** → System-Layer (Bluetooth/Volume, ESC zum Beenden)
 
 **Tipp:** [monkeytype.com](https://monkeytype.com) für Tipp-Übungen
@@ -425,16 +436,21 @@ git push
 
 ## 📝 Changelog
 
-**v3.0 (Current):**
+**v3.1 (Current):**
+- Mod-Morph: Space hold=Numbers, Shift+Space hold=Nav
+- F ist jetzt normaler Key (kein Layer-Tap mehr)
+- L-Shift Tap-Dance entfernt (nur R-Shift 2x für System)
+- Vereinfachte Navigation: Shift+Space für Nav Layer
+- Alle Combos deaktiviert (waren zu störend beim Tippen)
+
+**v3.0:**
 - ESC/TAB getauscht (ESC oben links, TAB Home Row)
 - React/JSX-optimiert: `<>` auf Z/X (Symbol Layer)
 - One-handed Symbol Layer (Enter hold, linke Hand tippt)
-- Layer-Toggle: L-Shift 2x (Nav), R-Shift 2x (System)
 - ESC als Layer-Exit für Toggle-Modi
 - Daumentasten: Alt/Cmd/Space | Enter/Cmd/Ctrl
 - Alt auf Home Row für Aerospace Window Manager
 - Minimal System Layer: Nur BT 0/1, Volume, Brightness
-- F hold für Nav Layer (zusätzlich zu Toggle)
 
 **v2.0:**
 - CAG Home Row Mods (Cmd auf D/L)
@@ -459,28 +475,23 @@ Bei Fragen oder Anpassungswünschen: Issue erstellen oder PR öffnen.
 ```
 LAYER ACCESS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ENTER hold       → Symbol Layer (momentary)
-SPACE hold       → Number Layer (momentary)
-F hold           → Nav Layer (momentary)
-L-Shift 2x tap   → Nav Layer (toggle, ESC to exit)
-R-Shift 2x tap   → System Layer (toggle, ESC to exit)
+ENTER hold           → Symbol Layer (momentary)
+SPACE hold           → Number Layer (momentary)
+SHIFT+SPACE hold     → Nav Layer (momentary)
+R-Shift 2x tap       → System Layer (toggle, ESC to exit)
 
 COMBOS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-D+F   → =>  (Arrow Function)
-S+D   → ()  (Empty Parens, cursor inside)
-J+K   → {}  (Empty Braces, cursor inside)
-K+L   → []  (Empty Brackets, cursor inside)
+Currently disabled (uncomment in keymap to re-enable)
 
 HOME ROW MODS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 A hold  → Ctrl    |  K hold  → Alt
 S hold  → Alt     |  L hold  → Cmd
 D hold  → Cmd     |  ; hold  → Ctrl
-F hold  → Nav     |
 
 THUMB KEYS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Left:  Alt | Cmd | Space (hold=Numbers)
+Left:  Alt | Cmd | Space (hold=Numbers, Shift+hold=Nav)
 Right: Enter (hold=Symbols) | Cmd | Ctrl
 ```
