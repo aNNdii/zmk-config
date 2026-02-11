@@ -1,0 +1,217 @@
+layout: {zmk_keyboard: corne}
+layers:
+  BASE:
+  - ESC
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: BSPC, s: DEL}
+  - TAB
+  - {t: A, h: LCTRL}
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
+  - F
+  - G
+  - H
+  - J
+  - {t: K, h: RALT}
+  - {t: L, h: RGUI}
+  - {t: ;, h: RCTRL}
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - '&td_rshift'
+  - LALT
+  - LGUI
+  - {t: SPACE, h: NUMBERS, s: NAV}
+  - {t: RET, h: SYMBOL}
+  - LGUI
+  - RCTRL
+  SYMBOL:
+  - '~'
+  - '!'
+  - '@'
+  - (
+  - )
+  - ':'
+  - ^
+  - '#'
+  - $
+  - '%'
+  - '&'
+  - {t: ▽, type: trans}
+  - '`'
+  - '['
+  - ']'
+  - '{'
+  - '}'
+  - .
+  - /
+  - '-'
+  - '='
+  - ;
+  - '"'
+  - '*'
+  - {t: ▽, type: trans}
+  - <
+  - '>'
+  - '|'
+  - \
+  - ','
+  - '?'
+  - _
+  - +
+  - '!'
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NUMBERS:
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LGUI
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - +
+  - '4'
+  - '5'
+  - '6'
+  - '-'
+  - '*'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '='
+  - '1'
+  - '2'
+  - '3'
+  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - '0'
+  - .
+  NAV:
+  - {t: BASE, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
+  - LALT
+  - LEFT GUI
+  - ''
+  - ''
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - UP ARROW
+  - ''
+  - {t: ▽, type: trans}
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - ''
+  - ''
+  - ''
+  - ''
+  - LEFT
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  SYS:
+  - {t: BASE, h: toggle}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - ''
+  - ''
+  - ''
+  - MUTE
+  - VOL DN
+  - VOLUME UP
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
