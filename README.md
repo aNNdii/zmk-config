@@ -3,6 +3,8 @@
 > **Optimiert für React/TypeScript mit Aerospace Window Manager**
 > Basierend auf Codebase-Analyse: 767 TypeScript-Dateien
 
+![Keymap](keymap.svg)
+
 ## 📊 Warum dieses Layout?
 
 Durch Analyse Ihrer Codebase wurden die häufigsten Sonderzeichen identifiziert:
