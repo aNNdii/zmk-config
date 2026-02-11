@@ -1,4 +1,4 @@
-name: Draw Keymap
+name: Draw ZMK keymaps
 
 on:
   push:
@@ -6,36 +6,16 @@ on:
       - main
     paths:
       - 'config/*.keymap'
-      - '.github/workflows/keymap-drawer.yml'
+      - 'keymap_drawer.config.yaml'
   workflow_dispatch:
 
 jobs:
   draw:
-    runs-on: ubuntu-latest
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
-      - name: Install keymap-drawer
-        run: |
-          pip install keymap-drawer
-          pip install 'tree-sitter<0.21'
-      
-      - name: Draw keymap
-        run: |
-          keymap parse -c 10 -z config/corne.keymap > keymap.yaml
-          keymap draw keymap.yaml > keymap.svg
-      
-      - name: Commit and push keymap
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update keymap diagram"
-          file_pattern: 'keymap.svg keymap.yaml'
+    with:
+      keymap_patterns: 'config/*.keymap'
+      config_path: 'keymap_drawer.config.yaml'
+      output_folder: 'assets'
+      commit_message: 'Update keymap diagram'

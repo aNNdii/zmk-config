@@ -3,7 +3,7 @@
 > **Optimiert für React/TypeScript mit Aerospace Window Manager**
 > Basierend auf Codebase-Analyse: 767 TypeScript-Dateien
 
-![Keymap](keymap.svg)
+![Keymap](assets/corne.svg)
 
 ## 📊 Warum dieses Layout?
 
