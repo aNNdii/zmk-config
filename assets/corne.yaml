@@ -16,13 +16,13 @@ layers:
   - TAB
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
-  - {t: D, h: LGUI}
-  - F
+  - {t: D, h: LSHFT}
+  - {t: F, h: LGUI}
   - G
   - H
-  - J
-  - {t: K, h: RALT}
-  - {t: L, h: RGUI}
+  - {t: J, h: RGUI}
+  - {t: K, h: RSHFT}
+  - {t: L, h: RALT}
   - {t: ;, h: RCTRL}
   - ''''
   - LSHFT
@@ -37,12 +37,12 @@ layers:
   - .
   - /
   - '&td_rshift'
-  - LALT
   - LGUI
+  - LALT
   - {t: SPACE, h: NUMBERS, s: NAV}
   - {t: RET, h: SYMBOL}
-  - LGUI
   - RCTRL
+  - RGUI
   SYMBOL:
   - '~'
   - '!'
