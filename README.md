@@ -27,7 +27,7 @@ Durch Analyse Ihrer Codebase wurden die häufigsten Sonderzeichen identifiziert:
 ## 🎯 Layout-Übersicht
 
 ### **5 Layer-System:**
-1. **BASE** - QWERTY mit CAG Home Row Mods
+1. **BASE** - QWERTY mit CASG Home Row Mods (Hybrid)
 2. **SYMBOL** - React/TypeScript-optimiert (Enter hold)
 3. **NUMBERS** - Zahlenreihe + Numpad (Space hold)
 4. **NAV** - Vim-Style Navigation (Shift+Space hold)
@@ -49,35 +49,37 @@ Durch Analyse Ihrer Codebase wurden die häufigsten Sonderzeichen identifiziert:
 │     │     │     │     │     │     │   │     │     │     │     │     │  Shift=⌦ │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
 │ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │    '     │
-│     │Ctl/A│Alt/S│Cmd/D│     │     │   │     │     │Alt/K│Cmd/L│Ctl/;│          │
+│     │Ctl/A│Alt/S│Sft/D│Cmd/F│     │   │     │Cmd/J│Sft/K│Alt/L│Ctl/;│          │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
 │SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │  SHIFT   │
 │     │     │     │     │     │     │   │     │     │     │     │     │   2x→    │
 │     │     │     │     │     │     │   │     │     │     │     │     │   SYS    │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
-                  │ ALT │ CMD │ SPC │   │ ENT │ CMD │ CTL │
+                  │ CMD │ ALT │ SPC │   │ ENT │ CTL │ CMD │
                   │     │     │^NUM │   │^SYM │     │     │
                   │     │     │^NAV │   │     │     │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
              (Shift+Space hold = Nav)
 ```
 
-### **CAG Home Row Mods (Hold):**
-- **A** = Ctrl | **S** = Alt | **D** = Cmd ⭐
-- **K** = Alt | **L** = Cmd ⭐ | **;** = Ctrl
-- **F/J** bleiben normal (keine Modifier)
+### **CASG Home Row Mods (Hold) - Hybrid:**
+- **Linke Hand:** A=Ctrl | S=Alt | D=Shift | F=Cmd ⭐
+- **Rechte Hand:** J=Cmd ⭐ | K=Shift | L=Alt | ;=Ctrl
+- **Alle 4 Modifier auf Home Row** für ergonomisches Tippen
 
-### **Daumentasten:**
-- **Links:** Alt | Cmd | Space
+### **Daumentasten (Backup für Shortcuts):**
+- **Links:** Cmd | Alt | Space
   - **Space tap:** Space
   - **Space hold:** Number Layer
   - **Shift+Space hold:** Nav Layer
-- **Rechts:** Enter (hold = Symbols) | Cmd | Ctrl
+- **Rechts:** Enter (hold = Symbols) | Ctrl | Cmd
 
-**Warum CAG?**
-- ✅ Cmd auf Mittelfinger (D/L) - häufigster macOS-Modifier optimal platziert!
-- ✅ Alt auf Home Row für Aerospace Window Manager (Alt+H/J/K/L)
-- ✅ Cmd+C/V/Z: D+C/V/Z (perfekt erreichbar!)
+**Warum CASG Hybrid?**
+- ✅ **Cmd auf Zeigefinger (F/J)** - stärkster Finger für wichtigsten Modifier!
+- ✅ **Shift auf Mittelfinger (D/K)** - für Großbuchstaben
+- ✅ **Alt auf Ringfinger (S/L)** - für Aerospace Window Manager
+- ✅ **Daumen als Backup** - für komplexe Shortcuts (Cmd+Shift+X)
+- ✅ **Cmd+C/V/Z:** Entweder F+C/V/Z (HRM) oder Daumen-Cmd+C/V/Z
 
 ### **Smart Keys:**
 - **Backspace:** Normal = Backspace, **Shift+Backspace** = Delete
@@ -197,7 +199,8 @@ Durch Analyse Ihrer Codebase wurden die häufigsten Sonderzeichen identifiziert:
 ## 📊 Layout-Features
 
 ✅ **5 Layer** - Base, Symbol, Numbers, Nav, System  
-✅ **CAG Home Row Mods** - Cmd auf Mittelfinger (D/L), Alt für Aerospace  
+✅ **CASG Hybrid Home Row Mods** - Alle 4 Modifier (Ctrl/Alt/Shift/Cmd) + Daumen-Backup  
+✅ **Cmd auf Zeigefinger** - F/J für stärksten Finger  
 ✅ **React/JSX-optimiert** - `<>` auf Z/X (Symbol Layer)  
 ✅ **One-Hand Symbol Layer** - Enter hold (rechts), linke Hand tippt  
 ✅ **macOS + Aerospace** - Alt/Cmd optimal platziert  
@@ -225,14 +228,15 @@ SPACE hold           → Number Layer (momentary)
 SHIFT+SPACE hold     → Nav Layer (momentary)
 R-Shift 2x tap       → System Layer (toggle, ESC to exit)
 
-HOME ROW MODS:
+HOME ROW MODS (Hybrid - alle 4 Modifier):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-A hold  → Ctrl    |  K hold  → Alt
-S hold  → Alt     |  L hold  → Cmd
-D hold  → Cmd     |  ; hold  → Ctrl
+A hold  → Ctrl    |  J hold  → Cmd  ⭐
+S hold  → Alt     |  K hold  → Shift
+D hold  → Shift   |  L hold  → Alt
+F hold  → Cmd  ⭐  |  ; hold  → Ctrl
 
-THUMB KEYS:
+THUMB KEYS (Backup für Shortcuts):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Left:  Alt | Cmd | Space (hold=Numbers, Shift+hold=Nav)
-Right: Enter (hold=Symbols) | Cmd | Ctrl
+Left:  Cmd | Alt | Space (hold=Numbers, Shift+hold=Nav)
+Right: Enter (hold=Symbols) | Ctrl | Cmd
 ```
