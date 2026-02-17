@@ -1,5 +1,6 @@
 /*
  * Corne 3x6 TypeScript Layout with Home Row Mods
+ * Layer order: 0=BASE 1=NUM 2=SYM 3=NAV 4=SYS
  * Thumb cluster: NAV | NUM | SPC | RET | SYM | SYS
 
  *
@@ -58,23 +59,11 @@
 &kp ESC    &kp Q          &kp W         &kp E         &kp R     &kp T         &kp Y      &kp U     &kp I         &kp O         &kp P             &kp BSPC
 &kp TAB    &hm_l LCTRL A  &hm_l LALT S  &hm_l LSHFT D  &hm_l LGUI F     &kp G         &kp H      &hm_r RGUI J     &hm_r RSHFT K  &hm_r RALT L  &hm_r RCTRL SEMI  &kp SQT
 &kp LSHFT  &kp Z          &kp X         &kp C         &kp V     &kp B         &kp N      &kp M     &kp COMMA     &kp DOT       &kp FSLH          &kp RSHFT
-                                        &mo 3         &mo 2     &kp SPACE     &kp RET    &mo 1      &mo 4
+                                        &mo 3         &mo 1     &kp SPACE     &kp RET    &mo 2      &mo 4
             >;
         };
 
-        // Layer 1: SYMBOL (TypeScript-optimiert nach Häufigkeit)
-
-        symbol_layer {
-            label = "SYMBOL";
-            bindings = <
-&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &trans
-&kp GRAVE  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL  &kp SEMI   &kp DQT   &kp STAR
-&trans     &kp LT    &kp GT    &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS   &kp EXCL   &kp BSLH  &trans
-                               &trans    &trans    &trans       &trans     &trans     &trans
-            >;
-        };
-
-        // Layer 2: NUMBERS (Numpad rechts)
+        // Layer 1: NUMBERS (Numpad rechts)
 
         number_layer {
             label = "NUMBERS";
@@ -83,6 +72,18 @@
 &trans  &none   &none   &none   &none   &none     &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH  &none    &none
 &trans  &none   &none   &none   &none   &none     &kp EQUAL &none      &kp COMMA  &kp DOT  &kp FSLH  &trans
                         &trans  &trans  &trans    &trans    &trans     &trans
+            >;
+        };
+
+        // Layer 2: SYMBOL (TypeScript-optimiert nach Häufigkeit)
+
+        symbol_layer {
+            label = "SYMBOL";
+            bindings = <
+&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &trans
+&kp GRAVE  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL  &kp SEMI   &kp DQT   &kp STAR
+&trans     &kp LT    &kp GT    &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS   &kp EXCL   &kp BSLH  &trans
+                               &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
