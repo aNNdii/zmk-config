@@ -143,10 +143,10 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
+  - LCTRL
+  - LALT
+  - LSHFT
+  - LGUI
   - ''
   - LEFT
   - DOWN
