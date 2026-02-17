@@ -43,49 +43,6 @@ layers:
   - RET
   - SYMBOL
   - SYS
-  SYMBOL:
-  - '~'
-  - '!'
-  - '@'
-  - (
-  - )
-  - ':'
-  - ^
-  - '#'
-  - $
-  - '%'
-  - '&'
-  - {t: ▽, type: trans}
-  - '`'
-  - '['
-  - ']'
-  - '{'
-  - '}'
-  - .
-  - /
-  - '-'
-  - '='
-  - ;
-  - '"'
-  - '*'
-  - {t: ▽, type: trans}
-  - <
-  - '>'
-  - '|'
-  - \
-  - ','
-  - '?'
-  - _
-  - +
-  - '!'
-  - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
   NUMBERS:
   - {t: ▽, type: trans}
   - '1'
@@ -128,6 +85,49 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  SYMBOL:
+  - '~'
+  - '!'
+  - '@'
+  - (
+  - )
+  - ':'
+  - ^
+  - '#'
+  - $
+  - '%'
+  - '&'
+  - {t: ▽, type: trans}
+  - '`'
+  - '['
+  - ']'
+  - '{'
+  - '}'
+  - .
+  - /
+  - '-'
+  - '='
+  - ;
+  - '"'
+  - '*'
+  - {t: ▽, type: trans}
+  - <
+  - '>'
+  - '|'
+  - \
+  - ','
+  - '?'
+  - _
+  - +
+  - '!'
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   NAV:
   - {t: ▽, type: trans}
