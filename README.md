@@ -55,7 +55,7 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 │     │     │     │     │     │     │   │     │     │     │     │     │   2x→    │
 │     │     │     │     │     │     │   │     │     │     │     │     │   SYS    │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
-                   │ NAV │ NUM │ SPC │   │ ENT │ SYM │ SYS │
+                   │ NAV │ NUM │ SPC │   │ RET │ SYM │ SYS │
                    ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
