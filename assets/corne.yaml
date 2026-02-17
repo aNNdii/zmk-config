@@ -130,7 +130,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   NAV:
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
@@ -141,8 +141,8 @@ layers:
   - PG UP
   - END
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - LCTRL
   - LALT
   - LSHFT
@@ -154,7 +154,7 @@ layers:
   - RIGHT
   - UP ARROW
   - ''
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
@@ -173,7 +173,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SYS:
-  - {t: ▽, type: trans}
+  - ''
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - ''
@@ -184,7 +184,7 @@ layers:
   - VOLUME UP
   - ''
   - ''
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
