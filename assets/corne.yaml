@@ -39,7 +39,7 @@ layers:
   - '&td_rshift'
   - NAV
   - NUMBERS
-  - {t: SPC, h: NUMBERS}
+  - {t: SPACE, h: NUMBERS}
   - {t: RET, h: SYMBOL}
   - SYMBOL
   - SYS

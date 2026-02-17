@@ -291,7 +291,7 @@ path.combo {
 </a></g>
 <g transform="translate(351, 224) rotate(30.0)" class="key keypos-38">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
-<text x="0" y="0" class="key tap">SPC</text>
+<text x="0" y="0" class="key tap">SPACE</text>
 <a href="#NUMBERS">
 <text x="0" y="38" class="key hold layer-activator">NUMBERS</text>
 </a></g>
