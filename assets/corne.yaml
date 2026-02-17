@@ -39,8 +39,8 @@ layers:
   - '&td_rshift'
   - NAV
   - NUMBERS
-  - {t: SPACE, h: NUMBERS}
-  - {t: RET, h: SYMBOL}
+  - SPACE
+  - RET
   - SYMBOL
   - SYS
   SYMBOL:
@@ -83,8 +83,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   NUMBERS:
   - {t: ▽, type: trans}
