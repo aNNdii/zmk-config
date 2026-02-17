@@ -1,7 +1,7 @@
 /*
  * Corne 3x6 TypeScript Layout with Home Row Mods
  * Thumb cluster: NAV | NUM | SPC | RET | SYM | SYS
- * Layer 4 (SYS) via mo 4 (outer-right thumb)
+
  *
  * Häufigste Sonderzeichen:
  * . (13.5%), () (22.2%), ' (9.7%), ; (8.6%), / (7.7%), , (7.6%), {} (13.4%), : (6.6%)
@@ -91,7 +91,7 @@
         nav_layer {
             label = "NAV";
             bindings = <
-&to 0   &none        &none        &none         &none        &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none         &trans
+&trans  &none        &none        &none         &none        &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none         &trans
 &trans  &kp LCTRL   &kp LALT     &kp LSHFT     &kp LGUI     &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp UP_ARROW  &none
 &trans  &none        &none        &none         &none        &none     &none     &none      &none      &kp LEFT   &kp DOWN      &kp RIGHT
                               &trans        &trans     &trans    &trans    &trans     &trans
@@ -103,7 +103,7 @@
         system_layer {
             label = "SYS";
             bindings = <
-&to 0       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &trans
+&trans      &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &trans
 &none       &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
 &bt BT_CLR  &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
                                         &trans  &trans  &trans    &trans      &trans        &trans

@@ -117,7 +117,7 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│EXIT │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │     │     │
+│     │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ CTL │ ALT │ SFT │ CMD │     │   │  ←  │  ↓  │  ↑  │  →  │  ↑  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -130,8 +130,6 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 - **Vim-Style (Home Row rechts):** H=←, J=↓, K=↑, L=→
 - **Page-Navigation:** Home, End, PgUp, PgDn
 - **Modifier links (A/S/D/F):** Ctrl | Alt | Shift | Cmd — kombinierbar mit Arrows
-- **EXIT** (top-left): zurück zu BASE
-
 **Modifier + Navigation Beispiele:**
 - `NAV + F + →` → `Cmd+Right` (Zeilenende)
 - `NAV + D + ↓` → `Shift+Down` (Zeile markieren)
@@ -146,7 +144,7 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│EXIT │ BT0 │ BT1 │     │     │     │   │MUTE │VOL- │VOL+ │     │     │     │
+│     │ BT0 │ BT1 │     │     │     │   │MUTE │VOL- │VOL+ │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │     │     │     │     │     │   │     │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -158,8 +156,6 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 - **Bluetooth:** Profile 0 (Q), Profile 1 (W), Clear (BTCLR)
 - **Volume:** Mute, Vol-, Vol+
-- **EXIT** (top-left): zurück zu BASE
-
 **Zugriff:** R3 Daumen (outer-right) halten
 
 **Beispiele:**
