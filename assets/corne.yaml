@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: BSPC, s: DEL}
+  - BSPC
   - TAB
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
@@ -37,12 +37,12 @@ layers:
   - .
   - /
   - '&td_rshift'
-  - LGUI
-  - LALT
-  - {t: SPACE, h: NUMBERS, s: NAV}
+  - NAV
+  - NUMBERS
+  - {t: SPC, h: NUMBERS}
   - {t: RET, h: SYMBOL}
-  - RCTRL
-  - RGUI
+  - SYMBOL
+  - SYS
   SYMBOL:
   - '~'
   - '!'
@@ -100,17 +100,17 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
-  - LALT
-  - LCTRL
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - +
-  - '4'
-  - '5'
-  - '6'
   - '-'
   - '*'
+  - /
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -118,17 +118,17 @@ layers:
   - ''
   - ''
   - '='
-  - '1'
-  - '2'
-  - '3'
+  - ''
+  - ','
+  - .
   - /
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - '0'
-  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   NAV:
   - {t: BASE, h: toggle}
   - ''
@@ -143,9 +143,9 @@ layers:
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
-  - LALT
-  - LEFT GUI
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - LEFT
@@ -155,10 +155,10 @@ layers:
   - UP ARROW
   - ''
   - {t: ▽, type: trans}
-  - Gui+Z
-  - Gui+X
-  - Gui+C
-  - Gui+V
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - ''
@@ -166,9 +166,9 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -214,4 +214,4 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
