@@ -13,79 +13,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
 
-        // Combos deaktiviert - zu oft versehentlich ausgelöst
-        // Bei Bedarf einzelne Combos wieder aktivieren
-        /*
-        // Arrow Function => (1,878 Vorkommen)
-        combo_arrow {
-            timeout-ms = <50>;
-            key-positions = <15 16>;  // D+F
-            bindings = <&arrow_macro>;
-            layers = <0>;
-        };
-
-        // Empty Parens () (5,050 Vorkommen)
-        combo_parens {
-            timeout-ms = <50>;
-            key-positions = <14 15>;  // S+D
-            bindings = <&parens_macro>;
-            layers = <0>;
-        };
-
-        // Empty Braces {} (3,094 Vorkommen)
-        combo_braces {
-            timeout-ms = <50>;
-            key-positions = <19 20>;  // J+K
-            bindings = <&braces_macro>;
-            layers = <0>;
-        };
-
-        // Empty Brackets []
-        combo_brackets {
-            timeout-ms = <50>;
-            key-positions = <20 21>;  // K+L
-            bindings = <&brackets_macro>;
-            layers = <0>;
-        };
-        */
-    };
-
-    macros {
-        // Arrow Function: =>
-
-        arrow_macro: arrow_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp GT>;
-        };
-
-        // Parens with cursor inside: ()←
-
-        parens_macro: parens_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
-        };
-
-        // Braces with cursor: {}←
-
-        braces_macro: braces_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
-        };
-
-        // Brackets with cursor: []←
-
-        brackets_macro: brackets_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
-        };
-    };
 
     behaviors {
         // Home Row Mods - macOS optimiert
@@ -171,9 +99,9 @@
         nav_layer {
             label = "NAV";
             bindings = <
-&to 0   &none      &none   &none   &none      &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none   &trans
-&trans  &none      &none   &none   &none      &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp UP_ARROW  &none
-&trans  &none      &none   &none   &none      &none     &none     &none      &none      &kp LEFT   &kp DOWN      &kp RIGHT
+&to 0   &none        &none        &none         &none        &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none         &trans
+&trans  &kp LCTRL   &kp LALT     &kp LSHFT     &kp LGUI     &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp UP_ARROW  &none
+&trans  &none        &none        &none         &none        &none     &none     &none      &none      &kp LEFT   &kp DOWN      &kp RIGHT
                               &trans        &trans     &trans    &trans    &trans     &trans
             >;
         };
