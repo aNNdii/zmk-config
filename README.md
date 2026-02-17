@@ -31,14 +31,13 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 2. **SYMBOL** - React/TypeScript-optimiert (R2 Daumen)
 3. **NUMBERS** - Zahlenreihe + Operatoren (L2 Daumen)
 4. **NAV** - Vim-Style Navigation + Modifier (L1 Daumen)
-5. **SYSTEM** - Bluetooth, Volume (R3 Daumen oder R-Shift 2x)
+5. **SYSTEM** - Bluetooth, Volume (R3 Daumen)
 
 ### Layer-Zugriff:
 - **L1 Daumen (outer-left)** → Nav Layer (momentary)
 - **L2 Daumen (middle-left)** → Number Layer (momentary)
 - **R2 Daumen (middle-right)** → Symbol Layer (momentary)
 - **R3 Daumen (outer-right)** → System Layer (momentary)
-- **R-Shift 2x tap** → System Layer (toggle - ESC zum Beenden)
 
 ---
 
@@ -52,8 +51,6 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 │     │Ctl/A│Alt/S│Sft/D│Cmd/F│     │   │     │Cmd/J│Sft/K│Alt/L│Ctl/;│          │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
 │SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │  SHIFT   │
-│     │     │     │     │     │     │   │     │     │     │     │     │   2x→    │
-│     │     │     │     │     │     │   │     │     │     │     │     │   SYS    │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
                    │ NAV │ NUM │ SPC │   │ RET │ SYM │ SYS │
                    ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
@@ -163,11 +160,11 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 - **Volume:** Mute, Vol-, Vol+
 - **EXIT** (top-left): zurück zu BASE
 
-**Zugriff:** R-Shift 2x tap (toggle) oder R3 Daumen halten
+**Zugriff:** R3 Daumen (outer-right) halten
 
 **Beispiele:**
-- Bluetooth wechseln: `R-Shift 2x` → `W` (BT 1) → `ESC`
-- Lautstärke: `R-Shift 2x` → `K` (Vol+) → `ESC`
+- Bluetooth wechseln: `SYS` halten → `W` (BT 1)
+- Lautstärke: `SYS` halten → `K` (Vol+)
 
 ---
 
@@ -180,7 +177,6 @@ L1 Daumen hold       → Nav Layer (momentary)
 L2 Daumen hold       → Number Layer (momentary)
 R2 Daumen hold       → Symbol Layer (momentary)
 R3 Daumen hold       → System Layer (momentary)
-R-Shift 2x tap       → System Layer (toggle, ESC to exit)
 
 HOME ROW MODS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
