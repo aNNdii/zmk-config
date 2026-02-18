@@ -2,10 +2,22 @@
  * Corne 3x6 TypeScript Layout with Home Row Mods
  * Layer order: 0=BASE 1=NUM 2=SYM 3=NAV 4=SYS
  * Thumb cluster: NAV | NUM | SPC | RET | SYM | SYS
-
  *
- * Häufigste Sonderzeichen:
- * . (13.5%), () (22.2%), ' (9.7%), ; (8.6%), / (7.7%), , (7.6%), {} (13.4%), : (6.6%)
+ * Symbol Layer Design (SYM = rechter Daumen):
+ *
+ * Frequenz-Analyse: 784 TS/TSX Dateien aus ycm2
+ *   . 20468  ( 16415  ) 16414  ' 14168  / 11265
+ *   { 10083  } 10083  : 8195   = 8159   - 7823
+ *   > 5589   < 2725   _ 2482   [ 1106   ] 1106
+ *   ? 831    ; 12628 (Prettier fügt auto ein → de facto niedrig)
+ *
+ * Prinzipien:
+ *   1. Home Row rechts: ( ) { } .  — Top-5 auf besten Positionen
+ *   2. Numbers-Konsistenz: ! @ # $ % auf Q W E R T (Shift+1-5)
+ *                          ^ & auf Y U (Shift+6-7)
+ *   3. => als Rollover: > (Y-Index-Top) dann = (I-Ring-Top), rechte Hand
+ *   4. - nach rechts (N-Bottom): kein Handwechsel mehr
+ *   5. ' auf O-Top (war P-Top): eine Spalte näher, Rang 4
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -75,15 +87,38 @@
             >;
         };
 
-        // Layer 2: SYMBOL (TypeScript-optimiert nach Häufigkeit)
+        // Layer 2: SYMBOL (Rechtshänder-optimiert für TypeScript/React)
+        //
+        // SYM = rechter Daumen → Tipp-Hand = rechte Finger
+        //
+        // Rechte Seite:
+        //   Top:  <  >  =  '  "    ← <> Paar benachbart (Roll), => Rollover Index→Ring
+        //   Home: (  )  {  }  .    ← Top-5 auf Home Row, null Streckung
+        //   Bot:  [  ]  -  :  /    ← [] Paar benachbart (Roll), - : / häufige Operatoren
+        //
+        // Linke Seite:
+        //   ESC:  `                ← Backtick direkt (Template Literals häufiger als ~)
+        //   Top:  !  @  #  $  %   ← Shift+1-5, gleiche Position wie Zahlen im NUM Layer
+        //   Home: ^  &  |  \  ?   ← ^ auf Pinky-Home, Union, Pipe, Optional
+        //   Bot:  _  ;  +  ~  *   ← ~ Shell, * Multiplikation/Spread
+        //
+        // Rolls: <> (Y+U), => (Y→I), () (H+J), {} (K+L), [] (N+M)
 
         symbol_layer {
             label = "SYMBOL";
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT    &kp LPAR  &kp RPAR  &kp COLON    &kp CARET  &kp HASH   &kp DLLR   &kp PRCNT  &kp AMPS  &trans
-&kp GRAVE  &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp DOT      &kp FSLH   &kp MINUS  &kp EQUAL  &kp SEMI   &kp DQT   &kp STAR
-&trans     &kp LT    &kp GT    &kp PIPE  &kp BSLH  &kp COMMA    &kp QMARK  &kp UNDER  &kp PLUS   &kp EXCL   &kp BSLH  &trans
-                               &trans    &trans    &trans       &trans     &trans     &trans
+//  ┌──────┬──────┬──────┬──────┬──────┬──────┐   ┌──────┬──────┬──────┬──────┬──────┬──────┐
+//  │  `   │  !   │  @   │  #   │  $   │  %   │   │  <   │  >   │  =   │  '   │  "   │      │
+    &kp GRAVE &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp LT     &kp GT     &kp EQUAL  &kp SQT    &kp DQT    &trans
+//  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
+//  │      │  ^   │  &   │  |   │  \   │  ?   │   │  (   │  )   │  {   │  }   │  .   │      │
+    &trans  &kp CARET &kp AMPS  &kp PIPE  &kp BSLH  &kp QMARK    &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &kp DOT    &trans
+//  ├──────┼──────┼──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┼──────┼──────┤
+//  │      │  _   │  ;   │  +   │  ~   │  *   │   │  [   │  ]   │  -   │  :   │  /   │      │
+    &trans  &kp UNDER &kp SEMI  &kp PLUS  &kp TILDE &kp STAR     &kp LBKT   &kp RBKT   &kp MINUS  &kp COLON  &kp FSLH   &trans
+//  └──────┴──────┴──────┼──────┼──────┼──────┤   ├──────┼──────┼──────┼──────┴──────┴──────┘
+                          &trans  &trans  &trans     &trans  &trans  &trans
+//                        └──────┴──────┴──────┘   └──────┴──────┴──────┘
             >;
         };
 

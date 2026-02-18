@@ -67,25 +67,31 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ---
 
-## Layer 1: SYMBOL (React/TypeScript-optimiert)
+## Layer 2: SYMBOL (React/TypeScript-optimiert)
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│  ~  │  !  │  @  │  (  │  )  │  :  │   │  ^  │  #  │  $  │  %  │  &  │     │
+│     │  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  =  │  '  │  "  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  `  │  [  │  ]  │  {  │  }  │  .  │   │  /  │  -  │  =  │  ;  │  "  │  *  │
+│     │  ~  │  <  │  >  │  |  │  \  │   │  (  │  )  │  {  │  }  │  .  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │  <  │  >  │  |  │  \  │  ,  │   │  ?  │  _  │  +  │  !  │  \  │     │
+│     │  `  │  [  │  ]  │  _  │  ?  │   │  -  │  :  │  /  │  ;  │  +  │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │     │     │     │   │ ███ │     │     │
+                  │     │     │     │   │     │ ███ │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
-- `()` auf E/R — 5,050× Vorkommen
-- `[]` `{}` auf Home Row — S/D + C/V
-- `<>` auf Z/X — JSX/React/Generics
-- `.` auf G — 13.5% häufigstes Symbol
-- `:` auf T — 6.6% für TypeScript
+**Rechte Seite (SYM-Daumen gehalten):**
+- `( ) { } .` auf Home Row — Rang 1-3 und 7-8, null Streckung
+- `^ & = ' "` auf Top Row — `=` fest (kein tap-dance), `'` auf O (Rang 4)
+- `- : / ; +` auf Bottom Row — `-` jetzt rechts (war links)
+
+**Linke Seite (Numbers-Shift-Konsistenz):**
+- `! @ # $ %` auf Q-T — gleiche Positionen wie Zahlen 1-5 im NUM Layer (Shift+1-5)
+- `~ < > | \` auf Home Row — Generics, JSX, Union Types
+- `` ` [ ] _ ?`` auf Bottom Row — Template, Arrays, Optional Chain
+
+**Combo `=>`:** `=` (I-Position) + `)` (J-Position) gleichzeitig drücken → `=>`
 
 **Zugriff:** R2 Daumen (middle-right) halten
 
