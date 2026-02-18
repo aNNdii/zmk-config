@@ -78,16 +78,16 @@
         // Layer 1: NUMBERS
         //
         // Top:   1-5 links, 6-0 rechts (wie QWERTY Zahlenreihe)
-        // Home:  Klammern links | Operatoren rechts: + - * / =
+        // Home:  Operatoren: + - * / =
         // Bot:   , . für Dezimalzahlen rechts
 
         number_layer {
             label = "NUMBERS";
             bindings = <
-&trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6    &kp N7     &kp N8     &kp N9   &kp N0    &trans
-&trans  &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &none      &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH &kp EQUAL &none
-&trans  &none      &none      &none      &none      &none      &none     &none      &kp COMMA  &kp DOT  &none     &trans
-                              &trans     &trans     &trans     &trans    &trans     &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6    &kp N7     &kp N8     &kp N9   &kp N0    &trans
+&trans  &none   &none   &none   &none   &none      &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH &kp EQUAL &none
+&trans  &none   &none   &none   &none   &none      &none     &none      &kp COMMA  &kp DOT  &none     &trans
+                        &trans  &trans  &trans     &trans    &trans     &trans
             >;
         };
 
