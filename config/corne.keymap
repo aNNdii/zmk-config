@@ -75,15 +75,19 @@
             >;
         };
 
-        // Layer 1: NUMBERS (Numpad rechts)
+        // Layer 1: NUMBERS
+        //
+        // Top:   1-5 links, 6-0 rechts (wie QWERTY Zahlenreihe)
+        // Home:  Klammern links | Operatoren rechts: + - * / =
+        // Bot:   , . für Dezimalzahlen rechts
 
         number_layer {
             label = "NUMBERS";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7     &kp N8     &kp N9   &kp N0    &trans
-&trans  &none   &none   &none   &none   &none     &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH  &none    &none
-&trans  &none   &none   &none   &none   &none     &kp EQUAL &none      &kp COMMA  &kp DOT  &kp FSLH  &trans
-                        &trans  &trans  &trans    &trans    &trans     &trans
+&trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6    &kp N7     &kp N8     &kp N9   &kp N0    &trans
+&trans  &kp LPAR   &kp RPAR   &kp LBRC   &kp RBRC   &none      &kp PLUS  &kp MINUS  &kp STAR   &kp FSLH &kp EQUAL &none
+&trans  &none      &none      &none      &none      &none      &none     &none      &kp COMMA  &kp DOT  &none     &trans
+                              &trans     &trans     &trans     &trans    &trans     &trans
             >;
         };
 
@@ -127,22 +131,26 @@
         nav_layer {
             label = "NAV";
             bindings = <
-&none   &none        &none        &none         &none        &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none         &none
+&none   &none        &none        &none         &none        &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL       &none
 &none   &kp LCTRL   &kp LALT     &kp LSHFT     &kp LGUI     &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp UP_ARROW  &none
-&none   &none        &none        &none         &none        &none     &none     &none      &none      &kp LEFT   &kp DOWN      &kp RIGHT
+&none   &none        &none        &none         &none        &none     &none     &none      &none      &kp LEFT   &kp DOWN   &kp RIGHT
                               &trans        &trans     &trans    &trans    &trans     &trans
             >;
         };
 
-        // Layer 4: SYSTEM (Bluetooth, Media, Screenshot)
+        // Layer 4: SYSTEM (F-Keys, Volume, Bluetooth)
+        //
+        // Top:   F1-F5 links | F6-F10 rechts, Print auf BSPC-Slot
+        // Home:  Mute Vol- Vol+ rechts
+        // Bot:   BT0 BT1 BT_CLR links
 
         system_layer {
             label = "SYS";
             bindings = <
-&none       &bt BT_SEL 0  &bt BT_SEL 1  &none   &none   &none     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &none  &none  &none
-&none       &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
-&bt BT_CLR  &none         &none         &none   &none   &none     &none       &none         &none            &none  &none  &none
-                                        &trans  &trans  &trans    &trans      &trans        &trans
+&none  &kp F1        &kp F2        &kp F3    &kp F4  &kp F5    &kp F6        &kp F7        &kp F8        &kp F9  &kp F10  &kp PSCRN
+&none  &none         &none         &none     &none   &none     &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR &none &none     &none         &none         &none         &none   &none    &none
+                                   &trans    &trans  &trans    &trans        &trans        &trans
             >;
         };
     };
