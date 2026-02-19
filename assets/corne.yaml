@@ -154,7 +154,7 @@ layers:
   - RIGHT
   - UP ARROW
   - ''
-  - ''
+  - {t: ▽, type: trans}
   - ''
   - ''
   - ''
