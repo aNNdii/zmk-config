@@ -1,0 +1,44 @@
+/*
+ * Shared behaviors for all Corne variants.
+ *
+ * Including keymap MUST define HM_L_POSITIONS and HM_R_POSITIONS
+ * before #include'ing this file. Position numbers depend on the
+ * physical key count (42 vs 46 with encoder slots).
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+#ifndef HM_L_POSITIONS
+#error "HM_L_POSITIONS must be defined before including corne_common.dtsi"
+#endif
+#ifndef HM_R_POSITIONS
+#error "HM_R_POSITIONS must be defined before including corne_common.dtsi"
+#endif
+
+/ {
+    behaviors {
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <HM_L_POSITIONS>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <HM_R_POSITIONS>;
+            hold-trigger-on-release;
+        };
+    };
+};
