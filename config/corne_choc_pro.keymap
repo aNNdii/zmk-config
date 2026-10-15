@@ -16,6 +16,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // 46-Key Keebart layout — encoder click positions (6, 7, 20, 21) excluded from hold-trigger
 #define HM_L_POSITIONS  8  9 10 11 12 13 22 23 24 25 26 27 34 35 36 37 38 39
@@ -77,7 +78,7 @@
             bindings = <
 &none       &kp F1        &kp F2        &kp F3  &kp F4  &kp F5    &none  &none  &kp F6      &kp F7        &kp F8        &kp F9  &kp F10  &kp PSCRN
 &none       &none         &none         &none   &none   &none     &none  &none  &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &none                   &none       &none         &none         &none   &none    &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &out OUT_TOG                   &none       &none         &none         &none   &none    &none
                                         &trans  &trans  &trans                  &trans      &trans        &trans
             >;
         };
