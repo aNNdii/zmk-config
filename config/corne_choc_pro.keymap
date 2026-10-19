@@ -2,7 +2,7 @@
  * Keebart Corne Choc Pro BT — 46-Key Variant
  *
  * Same layout philosophy as the Standard Corne (42-key) keymap:
- *   0=BASE 1=NUM 2=SYM 3=NAV 4=SYS
+ *   0=BASE 1=GAME 2=NUM 3=SYM 4=NAV 5=SYS
  *   Thumbs: NAV | NUM | SPC | RET | SYM | SYS
  *
  * Differences vs corne.keymap:
@@ -35,11 +35,23 @@
 &kp ESC    &kp Q          &kp W         &kp E          &kp R         &kp T      &none  &none  &kp Y      &kp U          &kp I          &kp O         &kp P             &kp BSPC
 &kp TAB    &hm_l LGUI A   &hm_l LALT S  &kp D          &hm_l LCTRL F &kp G      &none  &none  &kp H      &hm_r RCTRL J  &kp K          &hm_r RALT L  &hm_r RGUI SEMI   &kp SQT
 &kp LSHFT  &kp Z          &kp X         &kp C          &kp V         &kp B                    &kp N      &kp M          &kp COMMA      &kp DOT       &kp FSLH          &kp RSHFT
-                                        &mo 3          &mo 1         &kp SPACE                &kp RET    &mo 2          &mo 4
+                                        &mo 4          &mo 2         &kp SPACE                &kp RET    &mo 3          &mo 5
             >;
         };
 
-        // Layer 1: NUMBERS
+        // Layer 1: GAME (CS) — Toggle: SYS + G
+        // Home Row Mods aus, LCTRL (Ducken) auf dem äußeren linken Daumen statt NAV
+        game_layer {
+            label = "GAME";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans
+&trans  &kp A   &kp S   &trans  &kp F   &trans     &trans  &trans  &trans  &kp J   &trans  &kp L   &kp SEMI  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans    &trans
+                        &kp LCTRL  &trans  &trans                  &trans  &trans  &trans
+            >;
+        };
+
+        // Layer 2: NUMBERS
         number_layer {
             label = "NUMBERS";
             bindings = <
@@ -50,7 +62,7 @@
             >;
         };
 
-        // Layer 2: SYMBOL
+        // Layer 3: SYMBOL
         symbol_layer {
             label = "SYMBOL";
             bindings = <
@@ -61,7 +73,7 @@
             >;
         };
 
-        // Layer 3: NAVIGATION
+        // Layer 4: NAVIGATION
         nav_layer {
             label = "NAV";
             bindings = <
@@ -72,12 +84,12 @@
             >;
         };
 
-        // Layer 4: SYSTEM
+        // Layer 5: SYSTEM
         system_layer {
             label = "SYS";
             bindings = <
 &none       &kp F1        &kp F2        &kp F3  &kp F4  &kp F5    &none  &none  &kp F6      &kp F7        &kp F8        &kp F9  &kp F10  &kp PSCRN
-&none       &none         &none         &none   &none   &none     &none  &none  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
+&none       &none         &none         &none   &none   &tog 1    &none  &none  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &out OUT_TOG                   &none       &none         &none         &none   &none    &none
                                         &trans  &trans  &trans                  &trans      &trans        &trans
             >;

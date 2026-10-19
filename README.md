@@ -33,12 +33,13 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ## Layout-Übersicht
 
-### 5 Layer-System:
+### 6 Layer-System:
 0. **BASE** - QWERTY mit Home Row Mods (Ctrl, Alt, Cmd)
-1. **NUMBERS** - Zahlenreihe + Operatoren (L2 Daumen)
-2. **SYMBOL** - React/TypeScript-optimiert (R2 Daumen)
-3. **NAV** - Vim-Style Navigation + Modifier (L1 Daumen)
-4. **SYSTEM** - F-Tasten, Lautstärke, Bluetooth (R3 Daumen)
+1. **GAME** - BASE ohne Home Row Mods, für CS (Toggle: SYS + G)
+2. **NUMBERS** - Zahlenreihe + Operatoren (L2 Daumen)
+3. **SYMBOL** - React/TypeScript-optimiert (R2 Daumen)
+4. **NAV** - Vim-Style Navigation + Modifier (L1 Daumen)
+5. **SYSTEM** - F-Tasten, Lautstärke, Bluetooth (R3 Daumen)
 
 ### Layer-Zugriff:
 - **L1 Daumen (outer-left)** → Nav Layer (momentary)
@@ -98,7 +99,32 @@ Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
 
 ---
 
-## Layer 1: NUMBERS
+## Layer 1: GAME (Counter-Strike)
+
+Effektive Belegung, wenn GAME aktiv ist. `*` = anders als BASE.
+
+```
+╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬──────────╮
+│ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │   BSP ⌫  │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
+│ TAB │ *A  │ *S  │  D  │ *F  │  G  │   │  H  │ *J  │  K  │ *L  │ *;  │    '     │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
+│SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │  SHIFT   │
+╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
+                  │*CTRL│ NUM │ SPC │   │ RET │ SYM │ SYS │
+                  ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
+```
+
+- **Keine Home Row Mods:** A S F / J L ; sind normale Tasten. Sonst wird
+  langes Halten von A beim Strafen zu GUI (unter Windows: Win-Taste).
+- **CTRL (Ducken)** statt NAV auf dem äußeren linken Daumen.
+- NUM, SYM und SYS funktionieren wie gewohnt (GAME liegt direkt über BASE).
+
+**Zugriff:** `SYS` halten → `G` (an/aus). Nach einem Neustart ist GAME aus.
+
+---
+
+## Layer 2: NUMBERS
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
@@ -120,7 +146,7 @@ Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
 
 ---
 
-## Layer 2: SYMBOL (React/TypeScript-optimiert)
+## Layer 3: SYMBOL (React/TypeScript-optimiert)
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
@@ -151,7 +177,7 @@ Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
 
 ---
 
-## Layer 3: NAVIGATION
+## Layer 4: NAVIGATION
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
@@ -181,13 +207,13 @@ Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
 
 ---
 
-## Layer 4: SYSTEM
+## Layer 5: SYSTEM
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
 │     │ F1  │ F2  │ F3  │ F4  │ F5  │   │ F6  │ F7  │ F8  │ F9  │ F10 │PSCRN│
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │MUTE │VOL- │VOL+ │     │     │     │
+│     │     │     │     │     │GAME │   │MUTE │VOL- │VOL+ │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │BTCLR│ BT0 │ BT1 │ BT2 │     │ OUT │   │     │     │     │     │     │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
@@ -200,6 +226,7 @@ Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
 - **Bluetooth:** Profil 0 (Z), Profil 1 (X), Profil 2 (C)
 - **BTCLR:** löscht die Kopplung des gerade gewählten Profils
 - **OUT (B):** schaltet zwischen USB und Bluetooth um (wird gespeichert)
+- **GAME (G):** schaltet den GAME-Layer an/aus
 
 **Zugriff:** R3 Daumen (outer-right) halten
 
@@ -239,6 +266,7 @@ SYSTEM (SYS halten):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Z/X/C → BT 0/1/2   Shift → BT löschen
 B     → USB ⇄ Bluetooth
+G     → GAME-Layer an/aus
 ```
 
 ---

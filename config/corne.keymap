@@ -1,6 +1,6 @@
 /*
  * Corne 3x6 TypeScript Layout with Home Row Mods
- * Layer order: 0=BASE 1=NUM 2=SYM 3=NAV 4=SYS
+ * Layer order: 0=BASE 1=GAME 2=NUM 3=SYM 4=NAV 5=SYS
  * Thumb cluster: NAV | NUM | SPC | RET | SYM | SYS
  *
  * Symbol Layer Design (SYM = rechter Daumen):
@@ -45,11 +45,27 @@
 &kp ESC    &kp Q          &kp W         &kp E          &kp R         &kp T        &kp Y    &kp U         &kp I          &kp O         &kp P             &kp BSPC
 &kp TAB    &hm_l LGUI A   &hm_l LALT S  &kp D          &hm_l LCTRL F &kp G        &kp H    &hm_r RCTRL J &kp K          &hm_r RALT L  &hm_r RGUI SEMI   &kp SQT
 &kp LSHFT  &kp Z          &kp X         &kp C          &kp V         &kp B        &kp N    &kp M         &kp COMMA      &kp DOT       &kp FSLH          &kp RSHFT
-                                        &mo 3          &mo 1         &kp SPACE    &kp RET  &mo 2         &mo 4
+                                        &mo 4          &mo 2         &kp SPACE    &kp RET  &mo 3         &mo 5
             >;
         };
 
-        // Layer 1: NUMBERS
+        // Layer 1: GAME (CS) — Toggle: SYS + G
+        //
+        // Home Row Mods aus (A S F / J L ; sind normale Tasten),
+        // LCTRL (Ducken) auf dem äußeren linken Daumen statt NAV.
+        // Liegt direkt über BASE, damit NUM/SYM/SYS darüber unverändert bleiben.
+
+        game_layer {
+            label = "GAME";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans    &trans
+&trans  &kp A   &kp S   &trans  &kp F   &trans    &trans  &kp J   &trans  &kp L   &kp SEMI  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans    &trans
+                        &kp LCTRL  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        // Layer 2: NUMBERS
         //
         // Top:   1-5 links, 6-0 rechts (wie QWERTY Zahlenreihe)
         // Home:  Operatoren: + - * / =
@@ -65,7 +81,7 @@
             >;
         };
 
-        // Layer 2: SYMBOL (Rechtshänder-optimiert für TypeScript/React)
+        // Layer 3: SYMBOL (Rechtshänder-optimiert für TypeScript/React)
         //
         // SYM = rechter Daumen → Tipp-Hand = rechte Finger
         //
@@ -92,7 +108,7 @@
             >;
         };
 
-        // Layer 3: NAVIGATION (Vim-style + macOS shortcuts)
+        // Layer 4: NAVIGATION (Vim-style + macOS shortcuts)
 
         nav_layer {
             label = "NAV";
@@ -104,17 +120,17 @@
             >;
         };
 
-        // Layer 4: SYSTEM (F-Keys, Volume, Bluetooth)
+        // Layer 5: SYSTEM (F-Keys, Volume, Bluetooth)
         //
         // Top:   F1-F5 links | F6-F10 rechts, Print auf BSPC-Slot
-        // Home:  Mute Vol- Vol+ rechts
+        // Home:  Mute Vol- Vol+ rechts, GAME-Toggle auf G
         // Bot:   BT_CLR BT0 BT1 BT2 links, USB/BT-Toggle auf B
 
         system_layer {
             label = "SYS";
             bindings = <
 &none       &kp F1        &kp F2        &kp F3  &kp F4  &kp F5    &kp F6      &kp F7        &kp F8        &kp F9  &kp F10  &kp PSCRN
-&none       &none         &none         &none   &none   &none     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
+&none       &none         &none         &none   &none   &tog 1    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none   &none    &none
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none   &out OUT_TOG     &none       &none         &none         &none   &none    &none
                                         &trans  &trans  &trans    &trans      &trans        &trans
             >;
