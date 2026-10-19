@@ -1,24 +1,31 @@
 # Corne 3x6 - React/TypeScript Layout
 
 > **Optimiert für React/TypeScript mit Aerospace Window Manager**
-> Basierend auf Codebase-Analyse: 767 TypeScript-Dateien
+> Basierend auf Codebase-Analyse: 784 TS/TSX-Dateien
 
 ![Keymap](assets/corne.svg)
+
+Gilt für beide Boards: Corne 3x6 (`config/corne.keymap`) und Corne Choc Pro
+(`config/corne_choc_pro.keymap`, gleiche Belegung, Encoder-Positionen unbelegt).
 
 ## Warum dieses Layout?
 
 Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
-| Zeichen | Häufigkeit | Platzierung |
-|---------|-----------|-------------|
-| `.` | 13.5% | Symbol Layer (G Position) |
-| `()` | 5,050× | Symbol Layer (E/R) |
-| `<>` | JSX/React | Symbol Layer (Z/X) |
-| `;` | 8.6% | Symbol Layer (rechte Home Row) |
-| `/` | 7.7% | Symbol Layer |
-| `,` | 7.6% | Symbol Layer |
-| `{}` | 3,094× | Symbol Layer (C/V) |
-| `:` | 6.6% | Symbol Layer (T Position) |
+| Zeichen | Vorkommen | Platzierung (SYM-Layer, QWERTY-Position) |
+|---------|-----------|------------------------------------------|
+| `.` | 20.468 | `;` (rechte Home Row) |
+| `( )` | 16.415 | H / J (rechte Home Row) |
+| `'` | 14.168 | O |
+| `/` | 11.265 | `/` |
+| `{ }` | 10.083 | K / L (rechte Home Row) |
+| `:` | 8.195 | `.` |
+| `=` | 8.159 | I |
+| `-` | 7.823 | `,` |
+| `< >` | 2.725 / 5.589 | Y / U |
+| `_` | 2.482 | Z |
+| `[ ]` | 1.106 | N / M |
+| `;` | 12.628 (Prettier fügt es automatisch ein) | X |
 
 **Resultat:** ~15-20% weniger Tastendrücke für React/TypeScript.
 
@@ -27,17 +34,21 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 ## Layout-Übersicht
 
 ### 5 Layer-System:
-1. **BASE** - QWERTY mit CASG Home Row Mods
+0. **BASE** - QWERTY mit Home Row Mods (Ctrl, Alt, Cmd)
+1. **NUMBERS** - Zahlenreihe + Operatoren (L2 Daumen)
 2. **SYMBOL** - React/TypeScript-optimiert (R2 Daumen)
-3. **NUMBERS** - Zahlenreihe + Operatoren (L2 Daumen)
-4. **NAV** - Vim-Style Navigation + Modifier (L1 Daumen)
-5. **SYSTEM** - Bluetooth, Volume (R3 Daumen)
+3. **NAV** - Vim-Style Navigation + Modifier (L1 Daumen)
+4. **SYSTEM** - F-Tasten, Lautstärke, Bluetooth (R3 Daumen)
 
 ### Layer-Zugriff:
 - **L1 Daumen (outer-left)** → Nav Layer (momentary)
 - **L2 Daumen (middle-left)** → Number Layer (momentary)
 - **R2 Daumen (middle-right)** → Symbol Layer (momentary)
 - **R3 Daumen (outer-right)** → System Layer (momentary)
+
+In den Layer-Diagrammen bedeutet ein leeres Feld: ohne Funktion oder
+transparent (die Taste aus BASE bleibt nutzbar, z. B. Tab, Shift, Backspace).
+`███` markiert den gehaltenen Daumen.
 
 ---
 
@@ -48,22 +59,64 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 │ ESC │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │   BSP ⌫  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
 │ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │    '     │
-│     │Ctl/A│Alt/S│Sft/D│Cmd/F│     │   │     │Cmd/J│Sft/K│Alt/L│Ctl/;│          │
+│     │Ctl/A│Alt/S│     │Cmd/F│     │   │     │Cmd/J│     │Alt/L│Ctl/;│          │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼──────────┤
 │SHIFT│  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │  SHIFT   │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴──────────╯
-                   │ NAV │ NUM │ SPC │   │ RET │ SYM │ SYS │
-                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
+                  │ NAV │ NUM │ SPC │   │ RET │ SYM │ SYS │
+                  ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
-### CASG Home Row Mods (Hold):
-- **Linke Hand:** A=Ctrl | S=Alt | D=Shift | F=Cmd
-- **Rechte Hand:** J=Cmd | K=Shift | L=Alt | ;=Ctrl
+### Home Row Mods (Hold):
+- **Linke Hand:** A=Ctrl | S=Alt | F=Cmd
+- **Rechte Hand:** J=Cmd | L=Alt | ;=Ctrl
+- D und K haben keinen Modifier. Shift liegt nur auf den äußeren Shift-Tasten.
 
-**Warum CASG?**
+**Warum so?**
 - Cmd auf Zeigefinger (F/J) — stärkster Finger für wichtigsten Modifier
-- Shift auf Mittelfinger (D/K) — für Großbuchstaben
 - Alt auf Ringfinger (S/L) — für Aerospace Window Manager
+
+### Mac und Windows gleich bedienen
+
+Die Firmware sendet die Windows-Belegung: F/J = Ctrl, A/; = Win (GUI).
+Damit sind die gewohnten Shortcuts auf beiden Systemen gleich, z. B. `F + T`
+für einen neuen Tab (Mac: Cmd+T, Windows: Ctrl+T).
+
+| Taste (Hold) | Firmware | macOS | Windows |
+|--------------|----------|-------|---------|
+| A / ;        | GUI      | Ctrl  | Win     |
+| S / L        | Alt      | Alt   | Alt     |
+| F / J        | Ctrl     | Cmd   | Ctrl    |
+
+**Einmalig am Mac einrichten:** Systemeinstellungen → Tastatur →
+Tastaturkurzbefehle… → Sondertasten → oben das Corne auswählen →
+„Control (^)“ → „Befehlstaste (⌘)“ und „Befehlstaste (⌘)“ → „Control (^)“.
+Das gilt nur für dieses Keyboard, die eingebaute Tastatur bleibt unverändert.
+
+Nicht deckungsgleich ist die Textnavigation: Wortsprung ist am Mac
+`Alt+←`, unter Windows `Ctrl+←` (`Alt+←` ist dort „Zurück“ im Browser).
+
+---
+
+## Layer 1: NUMBERS
+
+```
+╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+│     │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │   │  +  │  -  │  *  │  /  │  =  │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │   │     │     │  ,  │  .  │     │     │
+╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
+                  │     │ ███ │     │   │     │     │     │
+                  ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
+```
+
+- Zahlenreihe 1-0 oben (wie die QWERTY-Zahlenreihe)
+- Rechenoperatoren auf der rechten Home Row: `+` `-` `*` `/` `=`
+- Dezimal: `,` `.`
+
+**Zugriff:** L2 Daumen (middle-left) halten
 
 ---
 
@@ -71,51 +124,30 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  =  │  '  │  "  │     │
+│  `  │  !  │  @  │  #  │  $  │  %  │   │  <  │  >  │  =  │  '  │  "  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │  ~  │  <  │  >  │  |  │  \  │   │  (  │  )  │  {  │  }  │  .  │     │
+│     │  ^  │  &  │  |  │  \  │  ?  │   │  (  │  )  │  {  │  }  │  .  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │  `  │  [  │  ]  │  _  │  ?  │   │  -  │  :  │  /  │  ;  │  +  │     │
+│     │  _  │  ;  │  +  │  ~  │  *  │   │  [  │  ]  │  -  │  :  │  /  │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
                   │     │     │     │   │     │ ███ │     │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
-**Rechte Seite (SYM-Daumen gehalten):**
-- `( ) { } .` auf Home Row — Rang 1-3 und 7-8, null Streckung
-- `^ & = ' "` auf Top Row — `=` fest (kein tap-dance), `'` auf O (Rang 4)
-- `- : / ; +` auf Bottom Row — `-` jetzt rechts (war links)
+**Rechte Seite (SYM-Daumen rechts → Tipp-Hand rechts):**
+- `( ) { } .` auf der Home Row — die häufigsten Zeichen, null Streckung
+- `< > = ' "` auf der Top Row — `<>` benachbart (Roll)
+- `[ ] - : /` auf der Bottom Row — `[]` benachbart (Roll)
 
-**Linke Seite (Numbers-Shift-Konsistenz):**
-- `! @ # $ %` auf Q-T — gleiche Positionen wie Zahlen 1-5 im NUM Layer (Shift+1-5)
-- `~ < > | \` auf Home Row — Generics, JSX, Union Types
-- `` ` [ ] _ ?`` auf Bottom Row — Template, Arrays, Optional Chain
+**Linke Seite:**
+- `` ` `` auf ESC — Template Literals
+- `! @ # $ %` auf Q-T — gleiche Positionen wie 1-5 im NUM-Layer (Shift+1-5)
+- `^ & | \ ?` auf der Home Row — Union Types, Pipe, Optional
+- `_ ; + ~ *` auf der Bottom Row
 
-**Combo `=>`:** `=` (I-Position) + `)` (J-Position) gleichzeitig drücken → `=>`
+**Rolls:** `<>` (Y+U), `=>` (U→I), `()` (H+J), `{}` (K+L), `[]` (N+M)
 
 **Zugriff:** R2 Daumen (middle-right) halten
-
----
-
-## Layer 2: NUMBERS
-
-```
-╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │  1  │  2  │  3  │  4  │  5  │   │  6  │  7  │  8  │  9  │  0  │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │  +  │  -  │  *  │  /  │     │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │  =  │     │  ,  │  .  │  /  │     │
-╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
-                  │     │ ███ │     │   │     │     │     │
-                  ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
-```
-
-- Zahlenreihe 1-0 oben
-- Rechenoperatoren rechts: `+` `-` `*` `/` `=`
-- Dezimal: `,` `.`
-
-**Zugriff:** L2 Daumen (middle-left) halten
 
 ---
 
@@ -123,9 +155,9 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │     │     │
+│     │     │     │     │     │     │   │HOME │PG_DN│PG_UP│ END │ DEL │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │ CTL │ ALT │ SFT │ CMD │     │   │  ←  │  ↓  │  ↑  │  →  │  ↑  │     │
+│     │ CTL │ ALT │     │ CMD │     │   │  ←  │  ↓  │  ↑  │  →  │  ↑  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │     │     │     │     │     │   │     │     │     │  ←  │  ↓  │  →  │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
@@ -134,11 +166,14 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 ```
 
 - **Vim-Style (Home Row rechts):** H=←, J=↓, K=↑, L=→
-- **Page-Navigation:** Home, End, PgUp, PgDn
-- **Modifier links (A/S/D/F):** Ctrl | Alt | Shift | Cmd — kombinierbar mit Arrows
-**Modifier + Navigation Beispiele:**
+- **Pfeil-Cluster unten rechts:** `;`=↑, `.`=←, `/`=↓, Shift=→
+- **Page-Navigation:** Home, PgDn, PgUp, End, Delete
+- **Modifier links (A/S/F):** Ctrl | Alt | Cmd — kombinierbar mit Arrows
+  (unter Windows: Win | Alt | Ctrl, siehe BASE)
+
+**Modifier + Navigation Beispiele (macOS):**
 - `NAV + F + →` → `Cmd+Right` (Zeilenende)
-- `NAV + D + ↓` → `Shift+Down` (Zeile markieren)
+- `NAV + Shift links + ↓` → `Shift+Down` (Zeile markieren)
 - `NAV + S + ←` → `Alt+Left` (Wortsprung links)
 - `NAV + A + →` → `Ctrl+Right`
 
@@ -150,23 +185,31 @@ Durch Analyse der Codebase wurden die häufigsten Sonderzeichen identifiziert:
 
 ```
 ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
-│     │ BT0 │ BT1 │     │     │     │   │MUTE │VOL- │VOL+ │     │     │     │
+│     │ F1  │ F2  │ F3  │ F4  │ F5  │   │ F6  │ F7  │ F8  │ F9  │ F10 │PSCRN│
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │   │     │     │     │     │     │     │
+│     │     │     │     │     │     │   │MUTE │VOL- │VOL+ │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-│BTCLR│     │     │     │     │     │   │     │     │     │     │     │     │
+│BTCLR│ BT0 │ BT1 │ BT2 │     │ OUT │   │     │     │     │     │     │     │
 ╰─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────╯
                   │     │     │     │   │     │     │ ███ │
                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
 ```
 
-- **Bluetooth:** Profile 0 (Q), Profile 1 (W), Clear (BTCLR)
-- **Volume:** Mute, Vol-, Vol+
+- **F-Tasten:** F1-F10, Print Screen auf der Backspace-Position
+- **Lautstärke:** Mute, Vol-, Vol+
+- **Bluetooth:** Profil 0 (Z), Profil 1 (X), Profil 2 (C)
+- **BTCLR:** löscht die Kopplung des gerade gewählten Profils
+- **OUT (B):** schaltet zwischen USB und Bluetooth um (wird gespeichert)
+
 **Zugriff:** R3 Daumen (outer-right) halten
 
 **Beispiele:**
-- Bluetooth wechseln: `SYS` halten → `W` (BT 1)
+- Bluetooth wechseln: `SYS` halten → `X` (BT 1)
+- Über Bluetooth tippen, obwohl das USB-Kabel steckt: `SYS` halten → `B`
 - Lautstärke: `SYS` halten → `K` (Vol+)
+
+**Neues Gerät koppeln:** `SYS` + freies Profil wählen (z. B. `C` für BT 2) →
+`SYS` + Shift-Position (BTCLR) → am Gerät nach Bluetooth-Geräten suchen.
 
 ---
 
@@ -182,14 +225,20 @@ R3 Daumen hold       → System Layer (momentary)
 
 HOME ROW MODS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-A hold  → Ctrl    |  J hold  → Cmd
-S hold  → Alt     |  K hold  → Shift
-D hold  → Shift   |  L hold  → Alt
-F hold  → Cmd     |  ; hold  → Ctrl
+(macOS, Windows in Klammern)
+A hold  → Ctrl (Win)   |  J hold  → Cmd (Ctrl)
+S hold  → Alt          |  L hold  → Alt
+F hold  → Cmd (Ctrl)   |  ; hold  → Ctrl (Win)
+D, K    → kein Modifier, Shift nur außen
 
 NAV LAYER MODIFIER (linke Hand):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-A → Ctrl   S → Alt   D → Shift   F → Cmd
+A → Ctrl (Win)   S → Alt   F → Cmd (Ctrl)
+
+SYSTEM (SYS halten):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Z/X/C → BT 0/1/2   Shift → BT löschen
+B     → USB ⇄ Bluetooth
 ```
 
 ---
